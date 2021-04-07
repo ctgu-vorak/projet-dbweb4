@@ -7,12 +7,10 @@ Celui-ci sera structuré par :
 - Des classes (abstraites ou non) et/ou des interfaces
 - Un SGBD, PostGreSQL en l'occurence
 - Usage de l'objet PDO
+- Framework jQuery 3.6.0
+- Framework w3.css
 
 Les langages utilisés sont :
 - PHP 8.0.3 
 - HTML 5.0 / CSS / JavaScript
-- Framework jQuery 3.6.0
-- Framework w3.css
 - SQL (Structured Query Language)
-
-
