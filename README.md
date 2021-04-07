@@ -5,7 +5,7 @@ Nous disposons d'1 mois à partir du 6 Avril pour créer à ce qui ressemble à 
 
 Celui-ci sera structuré par :
 - Des classes (abstraites ou non) et/ou des interfaces
-- Un SGBD, PostGreSQL en l'occurence
+- Un SGBD PostGreSQL
 - Usage de l'objet PDO
 - Framework jQuery 3.6.0
 - Framework w3.css
