@@ -16,3 +16,11 @@ Nous disposons d'1 mois à partir du 6 Avril pour créer à ce qui ressemble à 
 - [CSS]
 - [JavaScript]
 - [SQL] (Structured Query Language)
+
+
+[PHP 8.0.3]: <https://php.net/>
+[HTML 5.0]: <https://en.wikipedia.org/wiki/HTML5>
+[CSS]: <https://en.wikipedia.org/wiki/CSS>
+[JavaScript]: <https://developer.mozilla.org/fr/docs/Web/JavaScript>
+[SQL]: <https://sql.sh/>
+
