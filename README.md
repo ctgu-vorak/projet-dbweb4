@@ -7,8 +7,8 @@ Nous disposions d'1 mois à partir du 6 Avril pour créer à ce qui ressemble à
 - Des classes (abstraites ou non) et/ou des interfaces
 - Un SGBD [PostGreSQL]
 - Usage de l'objet [PDO]
-- Framework [jQuery 3.6.1] marqué par un fichier local
-- Framework [w3.css] marqué par un fichier local (logique que GitHub indique une majorité de CSS)
+- Framework [jQuery 3.6.1] marqué par un fichier stocké en ligne
+- Framework [w3.css] marqué par un fichier stocké en ligne
 
 ## Langages utilisés :
 - [PHP 8.0.3] 
