@@ -1,4 +1,5 @@
 <?php
+/*
 if (isset($db)) {
     $requete = $db->prepare("SELECT categories.categorie, pseudo , contenu, publications.id FROM utilisateurs JOIN publications ON utilisateurs.id = publications.auteur JOIN categories ON publications.categorie = categories.id WHERE utilisateurs.id = ? GROUP BY categories.categorie, utilisateurs.pseudo, publications.contenu, publications.id");
     $requete->execute(array($_GET['id']));
@@ -7,7 +8,7 @@ if (isset($db)) {
     $column = $db->query("SELECT pseudo, publication FROM votes JOIN utilisateurs u ON votes.utilisateur = u.id JOIN publications p ON p.id = votes.publication WHERE p.id = votes.publication GROUP BY publication, votes.utilisateur, pseudo ORDER BY publication");
     $column->execute();
     $rslt = $column->fetchAll();
-}
+}*/
 ?>
 <div class="w3-container w3-padding w3-center">
     <table class="w3-border w3-table-all w3-centered">
@@ -18,8 +19,6 @@ if (isset($db)) {
 
         <?php
         echo "<tr class='w3-border'>";
-
-        if (count($stmt) > 0) {
             echo "
                     <tr class='w3-border'>
                         <th class='w3-container w3-border'>Catégories</th>
@@ -28,21 +27,29 @@ if (isset($db)) {
                     </tr>
                 </thead>";
 
-            foreach ($stmt as $key) {
-                echo "
+            if(isset($db)) {
+                require 'classes/profil_class.php';
+                $cat_cont = $db->query("SELECT categories.categorie, pseudo , contenu, publications.id FROM utilisateurs JOIN publications ON utilisateurs.id = publications.auteur JOIN categories ON publications.categorie = categories.id WHERE utilisateurs.id = ".$_GET['id']." GROUP BY categories.categorie, utilisateurs.pseudo, publications.contenu, publications.id");
+                $cat_cont->setFetchMode(PDO::FETCH_CLASS, 'profil_class');
+                while($content = $cat_cont->fetch()) {
+                    echo "
                 <tr class='w3-border'>
-                    <td class='w3-container w3-border'>" . $key['categorie'] . "</td>
-                    <td class='w3-container w3-border'>" . $key['contenu'] . "</td>
+                    <td class='w3-container w3-border'>" . $content->categorie . "</td>
+                    <td class='w3-container w3-border'>" . $content->contenu . "</td>
                     <td class='w3-container w3-border notes'>";
 
-                foreach ($rslt as $pub_key) {
-                    if ($key['id'] == $pub_key['publication']) {
-                        echo $pub_key['pseudo'] . "<br />";
+                    $user_like = $db->query("SELECT pseudo, publication FROM votes JOIN utilisateurs u ON votes.utilisateur = u.id JOIN publications p ON p.id = votes.publication WHERE p.id = votes.publication GROUP BY publication, votes.utilisateur, pseudo ORDER BY publication");
+                    $user_like->setFetchMode(PDO::FETCH_CLASS, 'votes_class');
+                    while($content_like = $user_like->fetch()) {
+                        if ($content->id == $content_like->publication) {
+                            echo $content_like->pseudo . "<br />";
+                        }
                     }
-                }
-                echo "</td>
+                    echo "</td>
                 </tr>";
+                }
             }
+
 
 
             echo "
@@ -55,7 +62,17 @@ if (isset($db)) {
                     </td>
                 </tr>";
 
-        } else {
+
+
+        ?>
+
+    </table>
+    <script src="assets/scripts/jquery_script.js" type="text/javascript"></script>
+</div>
+
+<!--
+if (count($stmt) > 0) {}
+else {
             echo "
                 <tr class='w3-border'>
                     <td class='w3-container w3-border' colspan='3'> <strong>Aucune publication </strong> </td>
@@ -67,8 +84,5 @@ if (isset($db)) {
                 </tr>";
         }
 
-        ?>
 
-    </table>
-    <script src="assets/scripts/jquery_script.js" type="text/javascript"></script>
-</div>
+        -->
