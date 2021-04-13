@@ -9,7 +9,7 @@
 
         <?php
         if(isset($db)) {
-            $stmt = $db->prepare("SELECT pseudo FROM utilisateurs");
+            $stmt = $db->query("SELECT pseudo FROM utilisateurs");
             $stmt->execute();
             $result = $stmt->fetchAll();
             $i = 1;

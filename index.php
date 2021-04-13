@@ -5,11 +5,12 @@
 
     <?php
         try {
-            define("TYPE", "pgsql");
-            define("HOST", "localhost");
-            define("BDD", "etd");
-            define("USER", "uapv2001983");
-            define("PASSWD", "QCm8qv");
+            define('TYPE', 'pgsql');
+            define('HOST', 'localhost');
+            define('BDD', 'etd');
+            define('USER', 'uapv2001983');
+            define('PASSWD', 'QCm8qv');
+
             $db = new PDO(TYPE.':host='.HOST.';dbname='.BDD, USER, PASSWD);
             $db->exec("SET CHARACTER SET utf8");
 
@@ -17,7 +18,7 @@
             else {  include("pages/utilisateurs.php");  }
 
         } catch (PDOException $e) {
-            echo "Erreur : " . $e->getMessage();
+            echo "Erreur : \n" . $e->getMessage();
         }
 
 

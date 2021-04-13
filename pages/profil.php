@@ -4,7 +4,7 @@
         $requete->execute(array($_GET['id']));
         $stmt = $requete->fetchAll();
         // ------------------------------
-        $column = $db->prepare("SELECT pseudo, publication FROM votes JOIN utilisateurs u ON votes.utilisateur = u.id JOIN publications p ON p.id = votes.publication WHERE p.id = votes.publication GROUP BY publication, votes.utilisateur, pseudo ORDER BY publication");
+        $column = $db->query("SELECT pseudo, publication FROM votes JOIN utilisateurs u ON votes.utilisateur = u.id JOIN publications p ON p.id = votes.publication WHERE p.id = votes.publication GROUP BY publication, votes.utilisateur, pseudo ORDER BY publication");
         $column->execute();
         $rslt = $column->fetchAll();
     }

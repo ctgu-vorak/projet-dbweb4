@@ -1,4 +1,4 @@
-<title>TP4 - PDO/BDD</title>
+<title>PROJET</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=0.75">
 <link rel="stylesheet" href="assets/css/w3.css" />
