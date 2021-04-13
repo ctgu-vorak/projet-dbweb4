@@ -20,12 +20,12 @@ try {
         include("pages/profil.php");
     } else {
         include("pages/utilisateurs.php");
+        //include("pages/publications.php");
     }
 
 } catch (PDOException $e) {
     echo "Erreur : \n" . $e->getMessage();
 }
-
 
 ?>
 

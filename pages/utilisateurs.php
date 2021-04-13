@@ -11,22 +11,20 @@
         </thead>
 
         <?php
+        require 'classes/users_class.php';
         if (isset($db)) {
-            $stmt = $db->query("SELECT pseudo FROM utilisateurs");
-            $stmt->execute();
-            $result = $stmt->fetchAll();
-            $i = 1;
-            foreach ($result as $key) {
+            $stmt = $db->query("SELECT id, pseudo FROM utilisateurs");
+            $stmt->setFetchMode(PDO::FETCH_CLASS, 'users_class');
+            while($content = $stmt->fetch()) {
                 echo "
         <tr class='w3-border'>
-            <td class='w3-container w3-border'>" . $key['pseudo'] . "</td>
+            <td class='w3-container w3-border'>" . $content->pseudo . "</td>
             <td class='w3-container w3-border' style='width: auto'>
                 <form method='get' action='" . htmlspecialchars($_SERVER['PHP_SELF']) . "'>
-                    <button class='w3-button w3-deep-purple w3-round-xlarge w3-hover-purple' type='submit' name='id' value='$i'> Lien vers le profil</button>
+                    <button class='w3-button w3-deep-purple w3-round-xlarge w3-hover-purple' type='submit' name='id' value='$content->id'> Lien vers le profil</button>
                 </form>
             </td>
         </tr>";
-                $i++;
             }
         }
         ?>
