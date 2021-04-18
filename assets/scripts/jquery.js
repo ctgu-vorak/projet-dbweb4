@@ -1,5 +1,5 @@
-$(document).ready(function(){
-    $("#hide_show_column").click( function () {
+$(document).ready(function () {
+    $("#hide_show_column").click(function () {
         $(".notes").toggle();
 
         if ($(".notes").css('display') === 'none') {
@@ -16,4 +16,12 @@ $(document).ready(function(){
 
 
     });
+
+    $('tr:not(#th)').hover(
+        function () {
+            $(this).animate({'zoom': 1.5}, 40);
+        },
+        function () {
+            $(this).animate({'zoom': 1}, 40);
+        });
 });
