@@ -35,7 +35,7 @@ if (isset($db)) {
                     echo "
                 <tr class='w3-border'>
                     <td class='w3-container w3-border'>" . $content->categorie . "</td>
-                    <td class='w3-container w3-border'>" . $content->contenu . "</td>
+                    <td class='w3-container w3-border content'>" . $content->contenu . "</td>
                     <td class='w3-container w3-border notes'>";
 
                     $user_like = $db->query("SELECT pseudo, publication FROM votes JOIN utilisateurs u ON votes.utilisateur = u.id JOIN publications p ON p.id = votes.publication WHERE p.id = votes.publication GROUP BY publication, votes.utilisateur, pseudo ORDER BY publication");
@@ -67,7 +67,27 @@ if (isset($db)) {
         ?>
 
     </table>
-    <script src="assets/scripts/jquery_script.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $("#hide_show_column").click(function () {
+                $(".notes").toggle();
+                if ($(".notes").css('display') === 'none') {
+                    $("#hide_show_column").html("Afficher les votes");
+                    $("#pub").attr("colspan", "2");
+                    $("#return").attr("colspan", "1");
+                } else {
+                    $("#hide_show_column").html("Cacher les votes");
+                    $("#pub").attr("colspan", "3");
+                    $("#return").attr("colspan", "2");
+                }
+            });
+            $('.content').hover(function () {
+                $(this).animate({'zoom': 1.25}, 25);
+            }, function () {
+                $(this).animate({'zoom': 1}, 25);
+            });
+        });
+    </script>
 </div>
 
 <!--
@@ -82,6 +102,15 @@ else {
                         <a class='w3-button w3-deep-purple w3-round-xlarge w3-hover-purple' style='text-decoration: none' target='_self' href='" . htmlspecialchars($_SERVER['PHP_SELF']) . "'>Retour à la page des utilisateurs</a>
                     </td>
                 </tr>";
+
+                <script type="text/javascript">
+        $(document).ready(function () {
+
+
+
+            });
+        });
+    </script>
         }
 
 
