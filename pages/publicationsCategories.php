@@ -1,4 +1,7 @@
 <div class='w3-container w3-padding w3-center'>
+    <!--
+    TODO : proposer un système de votes : idem que dans publicationsCategories.php
+    -->
     <table class='w3-border w3-table-all w3-centered'>
         <thead>
             <tr class='w3-border'>

@@ -1,4 +1,7 @@
 <div class="w3-container w3-padding w3-center">
+    <!--
+    TODO : proposer un modal permettant l'ajout ou la modif d'une publication. ID valide pseudo-> il s'agira d'une mise à jour ID non valide -> création
+    -->
     <table class="w3-border w3-table-all w3-centered">
         <thead>
         <tr class='w3-border'>
@@ -40,3 +43,4 @@
         </tbody>
     </table>
 </div>
+
