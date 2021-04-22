@@ -2,7 +2,7 @@
 
 ## Préambule
 Ce projet est la composante d'un examen réalisé pour le module **DBWEB4 - Architecture Web et Bases de données** de l'Université d'Avignon.  
-Il est le résultat d'un mois de travail réalisé sur PHPStorm 2021.0 entre le 06/04/2021 et le 06/05/2021.  
+Il est le résultat d'un mois de travail réalisé sur PHPStorm 2021.1 entre le 06/04/2021 et le 06/05/2021.  
 
 ## Objectif du projet
 Ce projet a pour but de créer à ce qui ressemble à un petit réseau social.*(Du calme Facebook)* :smirk:  
@@ -27,7 +27,7 @@ Un serveur web fourni par l'Université ainsi qu'un SGBD (**S**ystème de **G**e
 
 ## Preamble
 This project is the component of a review conducted for the **DBWEB4 - Web Architecture and Databases** module of the University of Avignon.  
-It is the result of a month of work carried out on PHPStorm 2021.0 between 06/04/2021 and 06/05/2021.
+It is the result of a month of work carried out on PHPStorm 2021.1 between 06/04/2021 and 06/05/2021.
 
 ## Project Objective
 This project aims to create what looks like a small social network. *(Quiet Facebook)* :smirk:  
