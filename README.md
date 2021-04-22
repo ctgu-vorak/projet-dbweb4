@@ -4,6 +4,7 @@
 ## Préambule
 Ce projet est la composante d'un examen réalisé pour le module **DBWEB4 - Architecture Web et Bases de données** de l'Université d'Avignon.  
 Il est le résultat d'un mois de travail réalisé sur PHPStorm 2021.0 entre le 06/04/2021 et le 06/05/2021.  
+
 ----------------------------------------------------------------------
 ## Objectif du projet
 Ce projet a pour but de créer à ce qui ressemble à un petit réseau social.*(Du calme Facebook)* :smirk:  
