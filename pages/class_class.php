@@ -1,5 +1,22 @@
 <?php
 
+class users_class {
+    public $id, $pseudo;
+
+    public function __construct() {
+        $this->id;
+        $this->pseudo;
+    }
+}
+
+class publications_class
+{
+    public $contenu, $categorie;
+
+    public function __construct() {
+        $this->categorie; $this->contenu;
+    }
+}
 
 class profil_class
 {
@@ -18,3 +35,5 @@ class votes_class
         $this->pseudo; $this->publication;
     }
 }
+
+?>

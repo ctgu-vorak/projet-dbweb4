@@ -11,7 +11,7 @@
         </thead>
         <?php
         if(isset($db)) {
-            require 'classes/publications_class.php';
+            require 'class_class.php';
             $query = $db->query("SELECT categories.categorie, contenu FROM utilisateurs JOIN publications ON utilisateurs.id = publications.auteur JOIN categories ON publications.categorie = categories.id GROUP BY categories.categorie, publications.contenu ORDER BY categories.categorie");
             $query->setFetchMode(PDO::FETCH_CLASS, 'publications_class');
             while ($content = $query->fetch()) {

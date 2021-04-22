@@ -11,7 +11,7 @@
         </thead>
 
         <?php
-        require 'classes/users_class.php';
+        require 'class_class.php';
         if (isset($db)) {
             $stmt = $db->query("SELECT id, pseudo FROM utilisateurs");
             $stmt->setFetchMode(PDO::FETCH_CLASS, 'users_class');
