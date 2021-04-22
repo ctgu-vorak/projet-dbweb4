@@ -2,23 +2,29 @@
     <table class="w3-border w3-table-all w3-centered">
         <thead>
         <tr class='w3-border'>
-            <th colspan='2'>Publications</th>
+            <th colspan='3'>Publications</th>
         </tr>
         <tr class='w3-border'>
             <th class='w3-border'>Catégories</th>
             <th class='w3-border'>Message</th>
+            <th class='w3-border'>Liens</th>
         </tr>
         </thead>
         <?php
         if(isset($db)) {
-            require 'class_class.php';
-            $query = $db->query("SELECT categories.categorie, contenu FROM utilisateurs JOIN publications ON utilisateurs.id = publications.auteur JOIN categories ON publications.categorie = categories.id GROUP BY categories.categorie, publications.contenu ORDER BY categories.categorie");
+            require 'others_files/class_class.php';
+            $query = $db->query("SELECT categories.categorie, categories.id, contenu FROM utilisateurs JOIN publications ON utilisateurs.id = publications.auteur JOIN categories ON publications.categorie = categories.id GROUP BY categories.categorie, categories.id, publications.contenu ORDER BY categories.categorie");
             $query->setFetchMode(PDO::FETCH_CLASS, 'publications_class');
             while ($content = $query->fetch()) {
                 echo "
             <tr class='w3-border'>
                  <td class='w3-container w3-border'>".$content->categorie."</td>
                  <td class='w3-container w3-border' style='width: auto'>".$content->contenu."</td>
+                 <td class='w3-container w3-border' style='width: auto'>
+                <form method='get' action='" . htmlspecialchars($_SERVER['PHP_SELF']) . "'>
+                    <button class='w3-button w3-deep-purple w3-round-xlarge w3-hover-purple' type='submit' name='idc' value='$content->id'> Lien vers la catégorie</button>
+                </form>
+            </td>
             </tr>";
             }
         }

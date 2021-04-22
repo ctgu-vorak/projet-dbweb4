@@ -11,17 +11,17 @@
         </thead>
 
         <?php
-        require 'class_class.php';
+        require 'others_files/class_class.php';
         if (isset($db)) {
             $stmt = $db->query("SELECT id, pseudo FROM utilisateurs");
             $stmt->setFetchMode(PDO::FETCH_CLASS, 'users_class');
             while($content = $stmt->fetch()) {
                 echo "
         <tr class='w3-border'>
-            <td class='w3-container w3-border'>" . $content->pseudo . "</td>
+            <td class='w3-container w3-border ctps'>" . $content->pseudo . "</td>
             <td class='w3-container w3-border' style='width: auto'>
                 <form method='get' action='" . htmlspecialchars($_SERVER['PHP_SELF']) . "'>
-                    <button class='w3-button w3-deep-purple w3-round-xlarge w3-hover-purple' type='submit' name='id' value='$content->id'> Lien vers le profil</button>
+                    <button class='w3-button w3-deep-purple w3-round-xlarge w3-hover-purple' type='submit' name='idp' value='$content->id'> Lien vers le profil</button>
                 </form>
             </td>
         </tr>";
@@ -29,4 +29,5 @@
         }
         ?>
     </table>
+    <script type="text/javascript" src="assets/scripts/user.js"></script>
 </div>
