@@ -5,10 +5,12 @@ $(document).ready(function () {
             $("#hide_show_column").html("Afficher les votes");
             $("#pub").attr("colspan", "2");
             $("#return").attr("colspan", "1");
+            $(".accueil").attr("colspan", "2");
         } else {
             $("#hide_show_column").html("Cacher les votes");
             $("#pub").attr("colspan", "3");
             $("#return").attr("colspan", "2");
+            $(".accueil").attr("colspan", "3");
         }
     });
     $('.content').hover(function () {

@@ -17,7 +17,7 @@
 
             if(isset($db)) {
                 require 'others_files/class_class.php';
-                $cat_cont = $db->query("SELECT categories.categorie, pseudo , contenu, publications.id FROM utilisateurs JOIN publications ON utilisateurs.id = publications.auteur JOIN categories ON publications.categorie = categories.id WHERE utilisateurs.id = ".$_GET['id']." GROUP BY categories.categorie, utilisateurs.pseudo, publications.contenu, publications.id");
+                $cat_cont = $db->query("SELECT categories.categorie, pseudo , contenu, publications.id FROM utilisateurs JOIN publications ON utilisateurs.id = publications.auteur JOIN categories ON publications.categorie = categories.id WHERE utilisateurs.id = ".$_GET['idp']." GROUP BY categories.categorie, utilisateurs.pseudo, publications.contenu, publications.id");
                 $cat_cont->setFetchMode(PDO::FETCH_CLASS, 'profil_class');
                 while($content = $cat_cont->fetch()) {
                     echo "
@@ -38,22 +38,23 @@
                 }
             }
 
-
-
+            $link = htmlspecialchars($_SERVER['PHP_SELF'])."?page_content=user_list";
             echo "
                 <tr>
                     <td colspan='2' id='return'>
-                        <a class='w3-button w3-deep-purple w3-round-xlarge w3-hover-purple' style='text-decoration: none' target='_self' href='" . htmlspecialchars($_SERVER['PHP_SELF']) . "'>Retour à la page des utilisateurs</a>
+                        <a class='w3-button w3-deep-purple w3-round-xlarge w3-hover-purple' style='text-decoration: none' target='_self' href='$link'><i class='fa fa-reply'></i> Retour à la page des utilisateurs</a>
                     </td>
                     <td id='hide_show'>
                         <button class='w3-button w3-deep-purple w3-round-xlarge w3-hover-purple' id='hide_show_column'>Cacher les votes</button>
                     </td>
                 </tr>";
 
-
-
         ?>
-
+        <tr class='w3-border'>
+            <td class='w3-container w3-border' colspan="3" id="accueil">
+                <a href="index.php" class="w3-button w3-deep-purple w3-round-xlarge w3-hover-purple"><i class="fa fa-reply"></i> Retour page d'accueil</a>
+            </td>
+        </tr>
     </table>
     <script type="text/javascript" src="assets/scripts/profil.js"></script>
 </div>

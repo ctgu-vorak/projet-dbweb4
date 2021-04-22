@@ -28,6 +28,13 @@
             }
         }
         ?>
+        <tr class='w3-border'>
+            <td class='w3-container w3-border' colspan="2">
+                <a href="index.php">
+                    <button class="w3-button w3-deep-purple w3-round-xlarge w3-hover-purple"><i class="fa fa-reply"></i> Retour page accueil</button>
+                </a>
+            </td>
+        </tr>
     </table>
     <script type="text/javascript" src="assets/scripts/user.js"></script>
 </div>

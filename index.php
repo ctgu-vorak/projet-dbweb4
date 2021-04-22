@@ -21,11 +21,17 @@ require 'others_files/db_connect.php';
                     include("pages/publications.php");
                     break;
             }
-            header('Location: 0');
-            // Traitement accès aux profils
-
         }
-    } include("pages/accueil.html");
+    }
+    elseif(isset($_GET['idc'])) {
+        include("pages/publicationsCategories.php");
+    }
+    elseif (isset($_GET['idp'])) {
+        include("pages/profil.php");
+    }
+    else {
+        include("pages/accueil.html");
+    }
 ?>
 
 </body>

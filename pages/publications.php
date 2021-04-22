@@ -10,6 +10,7 @@
             <th class='w3-border'>Liens</th>
         </tr>
         </thead>
+        <tbody>
         <?php
         if(isset($db)) {
             require 'others_files/class_class.php';
@@ -17,17 +18,25 @@
             $query->setFetchMode(PDO::FETCH_CLASS, 'publications_class');
             while ($content = $query->fetch()) {
                 echo "
-            <tr class='w3-border'>
-                 <td class='w3-container w3-border'>".$content->categorie."</td>
-                 <td class='w3-container w3-border' style='width: auto'>".$content->contenu."</td>
-                 <td class='w3-container w3-border' style='width: auto'>
-                <form method='get' action='" . htmlspecialchars($_SERVER['PHP_SELF']) . "'>
-                    <button class='w3-button w3-deep-purple w3-round-xlarge w3-hover-purple' type='submit' name='idc' value='$content->id'> Lien vers la catégorie</button>
-                </form>
-            </td>
-            </tr>";
+                <tr class='w3-border'>
+                     <td class='w3-container w3-border'>".$content->categorie."</td>
+                     <td class='w3-container w3-border' style='width: auto'>".$content->contenu."</td>
+                     <td class='w3-container w3-border' style='width: auto'>
+                        <form method='get' action='" . htmlspecialchars($_SERVER['PHP_SELF']) . "'>
+                            <button class='w3-button w3-deep-purple w3-round-xlarge w3-hover-purple' type='submit' name='idc' value='$content->id'> Lien vers la catégorie</button>
+                        </form>
+                    </td>
+                </tr>";
             }
         }
         ?>
+            <tr class='w3-border'>
+                <td class='w3-container w3-border' colspan="2">
+                    <a href="index.php">
+                        <button class="w3-button w3-deep-purple w3-round-xlarge w3-hover-purple"><i class="fa fa-reply"></i> Retour page accueil</button>
+                    </a>
+                </td>
+            </tr>
+        </tbody>
     </table>
 </div>
