@@ -17,7 +17,7 @@ Nous disposions d'1 mois à partir du 6 Avril pour créer à ce qui ressemble à
 
 ## Frameworks utilisés :
 - [jQuery 3.6.1]
-- [w3.css]
+- [W3.css]
 
 [PostGreSQL]:<https://www.postgresql.org/>
 [PDO]: <https://www.php.net/manual/fr/book.pdo.php>
@@ -27,4 +27,4 @@ Nous disposions d'1 mois à partir du 6 Avril pour créer à ce qui ressemble à
 [JavaScript]: <https://developer.mozilla.org/fr/docs/Web/JavaScript>
 [SQL]: <https://sql.sh/>
 [jQuery 3.6.1]:<https://api.jquery.com/>
-[w3.css]: <https://www.w3schools.com/w3css/defaulT.asp>
+[W3.css]: <https://www.w3schools.com/w3css/defaulT.asp>
