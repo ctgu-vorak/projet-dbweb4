@@ -58,7 +58,7 @@
                                 </button>
                             </th>
                             <th>
-                                <button class="w3-button w3-round w3-block w3-red w3-section w3-hover-red">Recommencer</button>
+                                <button class="w3-button w3-round w3-block w3-red w3-section w3-hover-red" type="reset">Recommencer</button>
                             </th>
                         </tr>
                     </table>

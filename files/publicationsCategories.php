@@ -2,6 +2,7 @@
     <!--
     TODO : proposer un système de votes : idem que dans publicationsCategories.php
     -->
+    <?php require 'files/connect_deconnect.php';?>
     <table class='w3-border w3-table-all w3-centered'>
         <thead>
             <tr class='w3-border'>
