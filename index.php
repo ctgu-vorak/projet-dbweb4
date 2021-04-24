@@ -32,6 +32,7 @@ require 'others_files/db_connect.php';
     else {
         include("pages/accueil.html");
     }
+
 ?>
 
 </body>
