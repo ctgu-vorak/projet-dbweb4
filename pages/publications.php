@@ -5,6 +5,7 @@
     <table class="w3-border w3-table-all w3-centered">
         <thead>
         <tr class='w3-border'>
+            <td><?php include("add_modal.php");?></td>
             <th colspan='3'>Publications</th>
         </tr>
         <tr class='w3-border'>
@@ -34,7 +35,7 @@
         }
         ?>
             <tr class='w3-border'>
-                <td class='w3-container w3-border' colspan="2">
+                <td class='w3-container w3-border' colspan="3">
                     <a href="index.php">
                         <button class="w3-button w3-deep-purple w3-round-xlarge w3-hover-purple"><i class="fa fa-reply"></i> Retour page accueil</button>
                     </a>
