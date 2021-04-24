@@ -1,43 +1,3 @@
-<?php
-// Traitement formulaire d'ajout à la BDD
-if(isset($db)) {
-    if( isset($_POST['pseudo']) || isset($_POST['content']) || isset($_POST['categorie'])) {
-        $pseudo = $_POST['pseudo']; $contenu = strtolower($_POST['content']); $cat = $_POST['categorie'];
-
-        // Trouver l'auteur de la publication
-        $find_author = $db->prepare("SELECT id FROM utilisateur WHERE pseudo = ?");
-        $find_author->execute(array($pseudo));
-        $auteur = $find_author->fetchAll();
-
-        // Trouver la catégorie de la publication
-        $find_categorie = $db->prepare("SELECT id FROM categories WHERE categorie = ?");
-        $find_categorie->execute(array($cat));
-        $categorie = $find_categorie->fetchAll();
-
-        /* Executer la requête d'insertion
-        $query_string = "INSERT INTO publication (contenu, auteur, categorie) VALUES (?,?,?)";
-        $prepare_query = $db->prepare($query_string);
-        $prepare_query->execute([$contenu, $auteur, $categorie]);*/
-
-        // ------------------------
-
-        $sql = "INSERT INTO 'publications' ('contenu', 'auteur', 'categorie') VALUES (:contenu, :auteur, :categorie)";
-        $res = $db->prepare($sql);
-        $exec = $res->execute(array(":contenu"=>$contenu,":auteur"=>$auteur, ":categorie"=>$categorie));
-        if($exec){
-            echo 'Données insérées';
-        }else{
-            echo "Échec de l'opération d'insertion";
-        }
-
-        // ------------------------
-
-
-        //header("Location: https://pedago.univ-avignon.fr/~uapv2001983/projet-dbweb4/index.php?page_content=publications");
-    }
-}
-?>
-
 <button id="open_modal" class="w3-button w3-deep-purple w3-round-xlarge w3-hover-purple">
     Ajout
 </button>
@@ -63,26 +23,26 @@ if(isset($db)) {
 
 
                 <table style="width: auto">
-                    <tr>
-                        <td class="w3-left w3-white">
+                    <tr  style="background-color: #ffffff">
+                        <td class="w3-left">
                             <input type="radio" name="categorie" value="divers" required/>
                             <label>Divers</label><br>
                         </td>
                     </tr>
-                    <tr>
-                        <td class="w3-left w3-white">
+                    <tr style="background-color: #ffffff">
+                        <td class="w3-left">
                             <input type="radio" name="categorie" value="news" required/>
                             <label>News</label><br>
                         </td>
                     </tr>
-                    <tr>
-                        <td class="w3-left w3-white">
+                    <tr style="background-color: #ffffff">
+                        <td class="w3-left">
                             <input type="radio" name="categorie" value="sport" required/>
                             <label>Sport</label><br>
                         </td>
                     </tr>
-                    <tr>
-                        <td class="w3-left w3-white">
+                    <tr style="background-color: #ffffff">
+                        <td class="w3-left">
                             <input type="radio" name="categorie" value="citation" required/>
                             <label>Citation</label><br>
                         </td>
