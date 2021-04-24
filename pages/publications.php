@@ -26,6 +26,11 @@
                      <td class='w3-container w3-border'>".$content->categorie."</td>
                      <td class='w3-container w3-border' style='width: auto'>".$content->contenu."</td>
                      <td class='w3-container w3-border' style='width: auto'>
+                        <form method='post' action='" . htmlspecialchars($_SERVER['PHP_SELF']) . "'>
+                            <button class='w3-button w3-deep-purple w3-round-xlarge w3-hover-purple' type='reset' name='vote' value=''></button>
+                        </form>
+                     </td>
+                     <td class='w3-container w3-border' style='width: auto'>
                         <form method='get' action='" . htmlspecialchars($_SERVER['PHP_SELF']) . "'>
                             <button class='w3-button w3-deep-purple w3-round-xlarge w3-hover-purple' type='submit' name='idc' value='$content->id'> Lien vers la catégorie</button>
                         </form>
