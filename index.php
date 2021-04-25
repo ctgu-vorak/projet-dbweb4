@@ -97,4 +97,4 @@ require 'files/head.html';
 </body>
 
 </html>
-<!-- © Site réalisé par Clément GUIMONNEAU (alias kaarov) pour le module DBWEB4 - Architecture Web et Bases de données de l'Université d'Avignon -->
+<!-- © Site imaginé et créé par Clément GUIMONNEAU (alias kaarov) pour le module DBWEB4 - Architecture Web et Bases de données de l'Université d'Avignon -->
