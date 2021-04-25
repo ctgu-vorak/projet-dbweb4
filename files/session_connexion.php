@@ -1,6 +1,6 @@
-<div class="w3-container w3-padding w3-left">
-    <button id="open_modal" class="w3-button w3-deep-purple w3-round-xlarge w3-hover-purple">
-        Connexion
+
+    <button id="open_modal" class="w3-bar-item w3-mobile w3-deep-purple w3-hover-purple" type="button">
+        <i class="fa fa-sign-in"></i> Connexion
     </button>
     <div id="modalBox" class="w3-modal">
         <div class="w3-modal-content w3-card-4 w3-animate-zoom" style="max-width:600px">
@@ -8,15 +8,15 @@
             <header class="w3-container w3-deep-purple">
             <span class="close_modal w3-button w3-xlarge w3-display-topright w3-hover-purple"
                   title="Fermer">&times;</span>
-                <h4>Connexion</h4>
+                <h3>Connexion</h3>
             </header>
 
             <form method="post" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>">
                 <div class="w3-margin">
-                    <label><b>Pseudo</b></label>
+                    <label class="w3-text-black"><b>Pseudo</b></label>
                     <input class="w3-input w3-border w3-margin-bottom" type="text" placeholder="Pseudo" name="pseudo_pseudo" maxlength="45" required/>
 
-                    <label><b>ID</b></label>
+                    <label class="w3-text-black"><b>ID</b></label>
                     <input class="w3-input w3-border w3-margin-bottom" type="number" placeholder="Numéro d'identifiant" name="id_pseudo" maxlength="2147483647" required />
 
 
@@ -39,7 +39,7 @@
             </form>
         </div>
     </div>
-</div>
+
 
 
 

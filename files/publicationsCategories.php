@@ -16,7 +16,7 @@
         if(isset($db)) {
             if(!empty($_GET['idc'])) {
                 require 'others_files/class_class.php';
-                $query = $db->query("SELECT categories.categorie, categories.id, contenu FROM utilisateurs JOIN publications ON utilisateurs.id = publications.auteur JOIN categories ON publications.categorie = categories.id WHERE categories.id = ".$_GET['idc']);
+                $query = $db->prepare("SELECT categories.categorie, categories.id, contenu FROM utilisateurs JOIN publications ON utilisateurs.id = publications.auteur JOIN categories ON publications.categorie = categories.id WHERE categories.id = ".$_GET['idc']);
                 $stmt = $query->execute();
                 $query->setFetchMode(PDO::FETCH_CLASS, 'publications_class');
                 while ($content = $query->fetch()) {

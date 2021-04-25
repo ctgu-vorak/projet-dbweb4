@@ -1,5 +1,5 @@
 <button id="open_modal" class="w3-button w3-deep-purple w3-round-xlarge w3-hover-purple">
-    Ajout
+    <i class="fa fa-edit"></i> Edition
 </button>
 
 <div id="modalBox" class="w3-modal">

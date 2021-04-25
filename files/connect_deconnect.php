@@ -1,26 +1,35 @@
 <?php
-    session_start();
     if(isset($_SESSION['pseudo'])) {
         echo "
-<table class='w3-table w3-margin'>
-    <tr>
-    <td class='w3-container'>
-        ".$_SESSION['pseudo']."
-    </td>
-    <td class='w3-right' style='width: auto'>
-        <form method='post' action='".htmlspecialchars($_SERVER['PHP_SELF'])."'>
-            <button name='deconnexion' class='w3-button w3-deep-purple w3-round-xlarge w3-hover-purple' type='submit'>Déconnexion</button>
-        </form>
-    </td>
-    </tr>
-</table>";
+<div class='w3-bar w3-deep-purple'>
+    <form method='post' action='".htmlspecialchars($_SERVER['PHP_SELF'])."'>
+        <button name='deconnexion' class='w3-bar-item w3-button w3-mobile w3-left' type='submit'><i class='fa fa-sign-out'></i> Déconnexion</button>
+    </form>
+    <span class='w3-bar-item w3-mobile'>".$_SESSION['pseudo']."</span>
+    <a class='w3-bar-item w3-mobile w3-right w3-deep-purple w3-hover-purple w3-right' href='".htmlspecialchars($_SERVER['PHP_SELF'])."' style='text-decoration: none'>
+        <i class='fa fa-reply'></i> Retour Accueil
+    </a>
+</div>
+        ";
+
     } else {
         echo "
-<table class='w3-table w3-margin'>
-    <tr>
-    <td class='w3-container'>
-        Invité
-    </td>
-    </tr>
-</table>";
+<div class='w3-bar w3-deep-purple'>";
+        include("files/session_connexion.php");
+    echo "        
+    <a class='w3-bar-item w3-mobile w3-right w3-deep-purple w3-hover-purple w3-right' href='".htmlspecialchars($_SERVER['PHP_SELF'])."' style='text-decoration: none'>
+        <i class='fa fa-reply'></i> Retour Accueil
+    </a>
+</div>";
     }
+
+?>
+
+<!--
+echo "
+<div class='w3-container w3-padding'>";
+    include("files/session_connexion.php");
+        echo "
+    </div>";
+    }
+-->

@@ -15,11 +15,12 @@
             session_start();
             $_SESSION['pseudo'] = $rslt[0]['pseudo'];
             $_SESSION['id'] = $rslt[0]['id'];
+            header("Refresh:0");
+            session_write_close();
         }
     }
 
     // Traitement du module de déconnexion
-
     if(isset($_POST['deconnexion'])) {
         session_start();
         if(isset($_SESSION)) {
@@ -29,6 +30,7 @@
             header('Location: index.php');
             exit;
         }
+        session_abort();
     }
 
 ?>
