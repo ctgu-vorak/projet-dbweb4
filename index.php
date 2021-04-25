@@ -45,7 +45,6 @@ require 'files/head.html';
 <body>
 
 <?php
-
     // Traitement page d'accueil
     if (isset($_GET['page_content'])) {
         $submit = $_GET['page_content'];
