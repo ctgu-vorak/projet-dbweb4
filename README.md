@@ -5,7 +5,7 @@ Ce projet est la composante d'un examen réalisé pour le module **DBWEB4 - Arch
 Il est le résultat d'un mois de travail réalisé sur PHPStorm 2021.1 entre le 06/04/2021 et le 06/05/2021.  
 
 ## Objectif du projet
-Ce projet a pour but de créer à ce qui ressemble à un petit réseau social.*(Du calme Facebook)* :smirk:  
+Ce projet a pour but de créer à ce qui ressemble à un petit réseau social. *(Du calme Facebook)* :smirk:  
 De ce fait, l'utilisation d'un SGBD et d'un serveur web fut donc obligatoire.
 Nous avions comme base de travail, un rendu que nous avons réalisé précédemment.   
 Celui-ci contenait uniquement : 
