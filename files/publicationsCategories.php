@@ -3,7 +3,7 @@
     TODO : proposer un système de votes : idem que dans publicationsCategories.php
     -->
     <div>
-        <?php require 'files/connect_deconnect.php'; ?>
+        <?php require 'files/navbar.php'; ?>
     </div>
     <div class='w3-container w3-padding w3-center'>
         <table class='w3-border w3-table-all w3-centered'>

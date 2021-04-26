@@ -69,24 +69,30 @@ require 'files/head.html';
         include("files/accueil.php");
     }
 
-    // Traitement ajout
+    // Traitement des publications
     if(isset($db)) {
+        // Traitement de l'ajout
         if( isset($_POST['pseudo']) && isset($_POST['content']) && isset($_POST['categorie'])) {
             $pseudo = $_POST['pseudo'];
             $content = $_POST['content'];
             $cat = $_POST['categorie'];
+
             // Trouver l'auteur de la publication
             $find_author = $db->prepare("SELECT id FROM utilisateurs WHERE pseudo = ?");
             $find_author->execute(array($pseudo));
             $auteur = $find_author->fetchAll(PDO::FETCH_COLUMN,0);
+
             // Trouver la catégorie de la publication
             $find_categorie = $db->prepare("SELECT id FROM categories WHERE categorie = ?");
             $find_categorie->execute(array($cat));
             $categorie = $find_categorie->fetchAll(PDO::FETCH_COLUMN,0);
+
             // Executer la requête d'insertion
             $prepare_query = $db->prepare("INSERT INTO publications (contenu, auteur, categorie) VALUES (?,?,?)")->execute(array($content,(int)$auteur[0],(int)$categorie[0]));
             header("Location: https://pedago.univ-avignon.fr/~uapv2001983/projet-dbweb4/index.php?page_content=publications");
         }
+
+        // Traitement de la modification
     }
 
 
@@ -96,4 +102,4 @@ require 'files/head.html';
 </body>
 
 </html>
-<!-- © Site imaginé et créé par Clément GUIMONNEAU (alias kaarov) pour le module DBWEB4 - Architecture Web et Bases de données de l'Université d'Avignon -->
+<!-- © Site imaginé et créé par Clément GUIMONNEAU (alias kaarov) pour le module DBWEB4 - Architecture Web et Bases de données de l'Université d'Avignon-->

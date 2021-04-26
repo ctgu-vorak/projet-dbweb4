@@ -4,7 +4,7 @@
     if(isset($_SESSION['pseudo'])) {
         echo "
         <div>";
-            require 'files/connect_deconnect.php';
+            require 'files/navbar.php';
             echo"
         </div>
         <div class='w3-padding'>
@@ -70,7 +70,7 @@
     else {
         echo "
         <div>";
-        require 'files/connect_deconnect.php';
+        require 'files/navbar.php';
         echo"
         </div>
         <div class='w3-padding'>

@@ -4,7 +4,7 @@ if(isset($_SESSION)) {
     echo "
 <div>
     <div>";
-        require 'files/connect_deconnect.php';
+        require 'files/navbar.php';
         echo"
     </div>
     <div class='w3-margin'>

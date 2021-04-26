@@ -4,16 +4,14 @@
         echo "
         <div>
             <div>";
-            require 'files/connect_deconnect.php';
+            require 'files/navbar.php';
             echo"
             </div>
             <div class='w3-container w3-padding w3-center'>
             <table class='w3-border w3-table-all w3-centered'>
                 <thead>
                     <tr class='w3-border'>
-                        <td>";
-        include("addmod_modal.php"); echo "</td>
-                        <th colspan='3'>Publications</th>
+                        <th colspan='4'>Publications</th>
                     </tr>
                     <tr class='w3-border'>
                         <th class='w3-border'>Catégories</th>
@@ -49,7 +47,7 @@
         } echo "
         
                 <tr class='w3-border'>
-                    <td class='w3-container w3-border' colspan='3'>
+                    <td class='w3-container w3-border' colspan='4'>
                         <a href='".htmlspecialchars($_SERVER['PHP_SELF'])."'>
                             <button class='w3-button w3-theme w3-round-xlarge w3-hover-dark-grey'><i class='fa fa-reply'></i> Retour page accueil</button>
                         </a>
@@ -62,7 +60,7 @@
     echo "
     <div>";
         echo "<div>";
-        require 'files/connect_deconnect.php';
+        require 'files/navbar.php';
         echo "</div>
             <div class='w3-padding'>
             <table class='w3-border w3-table-all w3-centered'>
