@@ -1,9 +1,12 @@
-<div class='w3-container w3-padding w3-center'>
+<div>
     <!--
     TODO : proposer un système de votes : idem que dans publicationsCategories.php
     -->
-    <?php require 'files/connect_deconnect.php';?>
-    <table class='w3-border w3-table-all w3-centered'>
+    <div>
+        <?php require 'files/connect_deconnect.php'; ?>
+    </div>
+    <div class='w3-container w3-padding w3-center'>
+        <table class='w3-border w3-table-all w3-centered'>
         <thead>
             <tr class='w3-border'>
                 <th colspan='2'>Publications</th>
@@ -32,12 +35,12 @@
         $link = htmlspecialchars($_SERVER['PHP_SELF'])."?page_content=publications";
         echo "<tr class='w3-border'>
                 <td class='w3-container w3-border'>
-                    <a href='$link' class='w3-button w3-theme w3-round-xlarge w3-hover-theme'>
+                    <a href='$link' class='w3-button w3-theme w3-round-xlarge w3-hover-dark-grey'>
                         <i class='fa fa-reply'></i> Retour liste catégorie
                     </a>
                 </td>
                 <td class='w3-container w3-border'>
-                    <a href='index.php' class='w3-button w3-theme w3-round-xlarge w3-hover-theme'>
+                    <a href='index.php' class='w3-button w3-theme w3-round-xlarge w3-hover-dark-grey'>
                        <i class='fa fa-reply'></i> Retour page accueil
                     </a>
                 </td>
@@ -45,4 +48,5 @@
 ?>
         </tbody>
     </table>
+    </div>
 </div>

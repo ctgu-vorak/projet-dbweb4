@@ -11,7 +11,8 @@
             <table class='w3-border w3-table-all w3-centered'>
                 <thead>
                     <tr class='w3-border'>
-                        <td>";include("add_modal.php"); echo "</td>
+                        <td>";
+        include("addmod_modal.php"); echo "</td>
                         <th colspan='3'>Publications</th>
                     </tr>
                     <tr class='w3-border'>
@@ -35,12 +36,12 @@
                          <td class='w3-container w3-border' style='width: auto'>".$content->contenu."</td>
                          <td class='w3-container w3-border' style='width: auto'>
                             <form method='post' action='" . htmlspecialchars($_SERVER['PHP_SELF']) . "'>
-                                <button class='w3-button w3-theme w3-round-xlarge w3-hover-theme' type='reset' name='vote' value=''><i class='fa fa-thumbs-o-up'></i></button>
+                                <button class='w3-button w3-theme w3-round-xlarge w3-hover-dark-grey' type='reset' name='vote' value=''><i class='fa fa-thumbs-o-up'></i></button>
                             </form>
                          </td>
                          <td class='w3-container w3-border' style='width: auto'>
                             <form method='get' action='" . htmlspecialchars($_SERVER['PHP_SELF']) . "'>
-                                <button class='w3-button w3-theme w3-round-xlarge w3-hover-theme' type='submit' name='idc' value='$content->id'> Lien vers la catégorie</button>
+                                <button class='w3-button w3-theme w3-round-xlarge w3-hover-dark-grey' type='submit' name='idc' value='$content->id'> Lien vers la catégorie</button>
                             </form>
                         </td>
                     </tr>";
@@ -50,7 +51,7 @@
                 <tr class='w3-border'>
                     <td class='w3-container w3-border' colspan='3'>
                         <a href='".htmlspecialchars($_SERVER['PHP_SELF'])."'>
-                            <button class='w3-button w3-theme w3-round-xlarge w3-hover-theme'><i class='fa fa-reply'></i> Retour page accueil</button>
+                            <button class='w3-button w3-theme w3-round-xlarge w3-hover-dark-grey'><i class='fa fa-reply'></i> Retour page accueil</button>
                         </a>
                     </td>
                 </tr>
@@ -88,7 +89,7 @@
                          <td class='w3-container w3-border' style='width: auto'>".$content->contenu."</td>
                          <td class='w3-container w3-border' style='width: auto'>
                             <form method='get' action='" . htmlspecialchars($_SERVER['PHP_SELF']) . "'>
-                                <button class='w3-button w3-theme w3-round-xlarge w3-hover-theme' type='submit' name='idc' value='$content->id'> Lien vers la catégorie</button>
+                                <button class='w3-button w3-theme w3-round-xlarge w3-hover-dark-grey' type='submit' name='idc' value='$content->id'> Lien vers la catégorie</button>
                             </form>
                         </td>
                     </tr>";
@@ -98,7 +99,7 @@
                 <tr class='w3-border'>
                     <td class='w3-container w3-border' colspan='3'>
                         <a href='".htmlspecialchars($_SERVER['PHP_SELF'])."'>
-                            <button class='w3-button w3-theme w3-round-xlarge w3-hover-theme'><i class='fa fa-reply'></i> Retour page accueil</button>
+                            <button class='w3-button w3-theme w3-round-xlarge w3-hover-dark-grey'><i class='fa fa-reply'></i> Retour page accueil</button>
                         </a>
                     </td>
                 </tr>

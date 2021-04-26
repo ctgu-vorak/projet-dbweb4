@@ -1,6 +1,6 @@
 
     <button id="open_modal" class="w3-bar-item w3-mobile w3-theme w3-hover-theme" type="button">
-        <i class="fa fa-sign-in"></i> Connexion
+        <i class="fa fa-sign-in"></i>
     </button>
     <div id="modalBox" class="w3-modal">
         <div class="w3-modal-content w3-card-4 w3-animate-zoom" style="max-width:600px">

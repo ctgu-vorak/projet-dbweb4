@@ -40,7 +40,7 @@
                         echo "</td>
                             <td class='w3-container w3-border'>
                                 <form method='post' action='" . htmlspecialchars($_SERVER['PHP_SELF']) . "'>
-                                    <button class='w3-button w3-theme w3-round-xlarge w3-hover-theme' type='reset' name='vote' value=''><i class='fa fa-thumbs-o-up'></i></button>
+                                    <button class='w3-button w3-theme w3-round-xlarge w3-hover-dark-grey' type='reset' name='vote' value=''><i class='fa fa-thumbs-o-up'></i></button>
                                 </form>
                             </td>
                         </tr>";
@@ -48,15 +48,15 @@
                 echo "  
                         <tr class='w3-border'>
                             <td class='w3-container w3-border' colspan=2' id='return'>
-                                <a class='w3-button w3-theme w3-round-xlarge w3-hover-theme' style='text-decoration: none' target='_self' href='$link'><i class='fa fa-reply'></i> Retour à la page des utilisateurs</a>
+                                <a class='w3-button w3-theme w3-round-xlarge w3-hover-dark-grey' style='text-decoration: none' target='_self' href='$link'><i class='fa fa-reply'></i> Retour à la page des utilisateurs</a>
                             </td>
                             <td class='w3-container w3-border' id='hide_show' colspan='2'>
-                                <button class='w3-button w3-theme w3-round-xlarge w3-hover-theme' id='hide_show_column'>Cacher les votes</button>
+                                <button class='w3-button w3-theme w3-round-xlarge w3-hover-dark-grey' id='hide_show_column'>Cacher les votes</button>
                             </td>
                         </tr>
                         <tr class='w3-border'>
                             <td class='w3-container w3-border' colspan='4' id='accueil'>
-                                <a href='index.php' class='w3-button w3-theme w3-round-xlarge w3-hover-theme'><i class='fa fa-reply'></i> Retour page d'accueil</a>
+                                <a href='index.php' class='w3-button w3-theme w3-round-xlarge w3-hover-dark-grey'><i class='fa fa-reply'></i> Retour page d'accueil</a>
                             </td>
                         </tr>
                     ";
@@ -64,7 +64,6 @@
                 echo "
             </div>
             </table>
-            <script type='text/javascript' src='assets/scripts/connected_profil.js'></script>
         </div>";
 
     }
@@ -109,15 +108,15 @@
             echo "  
                         <tr class='w3-border'>
                             <td class='w3-container w3-border' colspan=2' id='return'>
-                                <a class='w3-button w3-theme w3-round-xlarge w3-hover-theme' style='text-decoration: none' target='_self' href='$link'><i class='fa fa-reply'></i> Retour à la page des utilisateurs</a>
+                                <a class='w3-button w3-theme w3-round-xlarge w3-hover-dark-grey' style='text-decoration: none' target='_self' href='$link'><i class='fa fa-reply'></i> Retour à la page des utilisateurs</a>
                             </td>
                             <td class='w3-container w3-border' id='hide_show'>
-                                <button class='w3-button w3-theme w3-round-xlarge w3-hover-theme' id='hide_show_column'>Cacher les votes</button>
+                                <button class='w3-button w3-theme w3-round-xlarge w3-hover-dark-grey' id='hide_show_column'>Cacher les votes</button>
                             </td>
                         </tr>
                         <tr class='w3-border'>
                             <td class='w3-container w3-border' colspan='4' id='accueil'>
-                                <a href='index.php' class='w3-button w3-theme w3-round-xlarge w3-hover-theme'><i class='fa fa-reply'></i> Retour page d'accueil</a>
+                                <a href='index.php' class='w3-button w3-theme w3-round-xlarge w3-hover-dark-grey'><i class='fa fa-reply'></i> Retour page d'accueil</a>
                             </td>
                         </tr>
                     ";
@@ -125,21 +124,9 @@
         echo "
             </div>
             </table>
-            <script type='text/javascript' src='assets/scripts/profil.js'></script>
         </div>";
     }
+    echo "<script type='text/javascript' src='assets/scripts/user_profile.js'></script>";
 ?>
-<!--
-} else {
-echo "
-<tr class='w3-border'>
-    <td class='w3-container w3-border' colspan='3'> <strong>Aucune publication </strong> </td>
-</tr>
-<tr>
-    <td colspan='2' id='return'>
-        <a class='w3-button w3-theme w3-round-xlarge w3-hover-theme' style='text-decoration: none' target='_self' href='" . htmlspecialchars($_SERVER['PHP_SELF']) . "'>Retour à la page des utilisateurs</a>
-    </td>
-</tr>";
-}-->
 
 
