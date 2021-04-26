@@ -29,7 +29,7 @@ if(isset($_SESSION)) {
                     <td class='w3-container w3-border ctps'>" . $content->pseudo . "</td>
                     <td class='w3-container w3-border' style='width: auto'>
                         <form method='get' action='" . htmlspecialchars($_SERVER['PHP_SELF']) . "'>
-                            <button class='w3-button w3-deep-purple w3-round-xlarge w3-hover-purple' type='submit' name='idp' value='$content->id'> Lien vers le profil</button>
+                            <button class='w3-button w3-theme w3-round-xlarge w3-hover-theme' type='submit' name='idp' value='$content->id'> Lien vers le profil</button>
                         </form>
                     </td>
                 </tr>";
@@ -39,7 +39,7 @@ if(isset($_SESSION)) {
                 <tr class='w3-border'>
                     <td class='w3-container w3-border' colspan='2'>
                         <a href='".htmlspecialchars($_SERVER['PHP_SELF'])."'>
-                            <button class='w3-button w3-deep-purple w3-round-xlarge w3-hover-purple'><i class='fa fa-reply'></i> Retour page accueil</button>
+                            <button class='w3-button w3-theme w3-round-xlarge w3-hover-theme'><i class='fa fa-reply'></i> Retour page accueil</button>
                         </a>
                     </td>
                 </tr>

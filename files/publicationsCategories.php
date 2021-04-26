@@ -32,12 +32,12 @@
         $link = htmlspecialchars($_SERVER['PHP_SELF'])."?page_content=publications";
         echo "<tr class='w3-border'>
                 <td class='w3-container w3-border'>
-                    <a href='$link' class='w3-button w3-deep-purple w3-round-xlarge w3-hover-purple'>
+                    <a href='$link' class='w3-button w3-theme w3-round-xlarge w3-hover-theme'>
                         <i class='fa fa-reply'></i> Retour liste catégorie
                     </a>
                 </td>
                 <td class='w3-container w3-border'>
-                    <a href='index.php' class='w3-button w3-deep-purple w3-round-xlarge w3-hover-purple'>
+                    <a href='index.php' class='w3-button w3-theme w3-round-xlarge w3-hover-theme'>
                        <i class='fa fa-reply'></i> Retour page accueil
                     </a>
                 </td>

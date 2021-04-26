@@ -1,12 +1,12 @@
 
-    <button id="open_modal" class="w3-bar-item w3-mobile w3-deep-purple w3-hover-purple" type="button">
+    <button id="open_modal" class="w3-bar-item w3-mobile w3-theme w3-hover-theme" type="button">
         <i class="fa fa-sign-in"></i> Connexion
     </button>
     <div id="modalBox" class="w3-modal">
         <div class="w3-modal-content w3-card-4 w3-animate-zoom" style="max-width:600px">
 
-            <header class="w3-container w3-deep-purple">
-            <span class="close_modal w3-button w3-xlarge w3-display-topright w3-hover-purple"
+            <header class="w3-container w3-theme">
+            <span class="close_modal w3-button w3-xlarge w3-display-topright w3-hover-theme"
                   title="Fermer">&times;</span>
                 <h3>Connexion</h3>
             </header>
