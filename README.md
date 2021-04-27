@@ -17,6 +17,7 @@ De ce fait, l'objectif était de lui donner une dimension plus importante en lui
 
 - L'ajout ou la modification des publications.
 - L'ajout de votes via un bouton.
+- Savoir qui a posté une publication.
 
 ## Quels sont les outils utilisés ?
 Un serveur web fourni par l'Université ainsi qu'un SGBD (**S**ystème de **G**estion de **B**ases de **D**onnées) [PostGreSQL].
@@ -42,6 +43,7 @@ Therefore, the objective was to give it a more important dimension by adding var
 
 - Adding or modifying publications.
 - Adding votes via a button.
+- Find out who posted a publication.
 
 ## What tools are used ?
 A web server provided by the University as well as a DBMS (**D**ata**B**ase **M**anagement **S**ystem) [PostGreSQL].
