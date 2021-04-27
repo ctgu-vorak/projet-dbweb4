@@ -3,9 +3,10 @@ session_start();
 if(isset($_SESSION)) {
     echo "
 <div>
+    
     <div>";
-        require 'files/navbar.php';
-        echo"
+    require 'files/navbar.php';
+    echo"
     </div>
     <div class='w3-margin'>
         <table class='w3-border w3-table-all w3-centered'>
@@ -19,12 +20,12 @@ if(isset($_SESSION)) {
                 </tr>
             </thead>
             <tbody>";
-        require 'others_files/class_class.php';
-        if (isset($db)) {
-            $stmt = $db->query("SELECT id, pseudo FROM utilisateurs");
-            $stmt->setFetchMode(PDO::FETCH_CLASS, 'users_class');
-            while($content = $stmt->fetch()) {
-                echo "
+    require 'others_files/class_class.php';
+    if (isset($db)) {
+        $stmt = $db->query("SELECT id, pseudo FROM utilisateurs");
+        $stmt->setFetchMode(PDO::FETCH_CLASS, 'users_class');
+        while($content = $stmt->fetch()) {
+            echo "
                 <tr class='w3-border'>
                     <td class='w3-container w3-border ctps'>" . $content->pseudo . "</td>
                     <td class='w3-container w3-border' style='width: auto'>
@@ -33,9 +34,9 @@ if(isset($_SESSION)) {
                         </form>
                     </td>
                 </tr>";
-            }
         }
-        echo "
+    }
+    echo "
                 <tr class='w3-border'>
                     <td class='w3-container w3-border' colspan='2'>
                         <a href='".htmlspecialchars($_SERVER['PHP_SELF'])."'>
@@ -51,4 +52,3 @@ if(isset($_SESSION)) {
     ";
 }
 ?>
-

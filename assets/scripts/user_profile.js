@@ -18,10 +18,27 @@ $(document).ready(function () {
     }, function () {
         $(this).animate({'zoom': 1}, 25);
     });
-    $(".ctps").hover(function () {
+
+    /* ---------- Passage en bleu si c'est publié ---------- */
+    $(".ctps").click(function () {
+
+        $.get("../other_files/return.txt", function(data,status) {
+            $("#test").html(data);
+            alert(status);
+        })
+
+    });
+
+
+});
+
+/*
+
+$(".ctps").hover(function () {
             $(this).css("background", "#1EE49B");
         },
         function () {
             $(this).css("background", "#FFFFFF");
         });
-});
+
+ */

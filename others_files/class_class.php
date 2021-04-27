@@ -11,10 +11,10 @@ class users_class {
 
 class publications_class
 {
-    public $contenu, $id, $categorie;
+    public $contenu, $id, $categorie, $auteur;
 
     public function __construct() {
-        $this->categorie; $this->id; $this->contenu;
+        $this->categorie; $this->id; $this->contenu; $this->auteur;
     }
 }
 
