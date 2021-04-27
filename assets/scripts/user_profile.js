@@ -20,14 +20,12 @@ $(document).ready(function () {
     });
 
     /* ---------- Passage en bleu si c'est publié ---------- */
-    $(".ctps").click(function () {
-
-        $.get("../other_files/return.txt", function(data,status) {
-            $("#test").html(data);
-            alert(status);
-        })
-
-    });
+    $(".ctps").hover(function () {
+            $(this).css("background", "#607fff");
+        },
+        function () {
+            $(this).css("background", "#FFFFFF");
+        });
 
 
 });

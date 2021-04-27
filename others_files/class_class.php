@@ -1,11 +1,12 @@
 <?php
 
 class users_class {
-    public $id, $pseudo;
+    public $id, $pseudo, $auteur;
 
     public function __construct() {
         $this->id;
         $this->pseudo;
+        $this->auteur;
     }
 }
 

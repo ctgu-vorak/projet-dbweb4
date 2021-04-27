@@ -1,6 +1,5 @@
 <?php
 session_start();
-if(isset($_SESSION)) {
     echo "
 <div>
     
@@ -22,18 +21,23 @@ if(isset($_SESSION)) {
             <tbody>";
     require 'others_files/class_class.php';
     if (isset($db)) {
-        $stmt = $db->query("SELECT id, pseudo FROM utilisateurs");
+        $stmt = $db->query("SELECT pseudo, auteur, utilisateurs.id FROM utilisateurs LEFT JOIN publications p on utilisateurs.id = p.auteur GROUP BY utilisateurs.id, auteur ORDER BY utilisateurs.id ASC");
         $stmt->setFetchMode(PDO::FETCH_CLASS, 'users_class');
+
         while($content = $stmt->fetch()) {
-            echo "
-                <tr class='w3-border'>
-                    <td class='w3-container w3-border ctps'>" . $content->pseudo . "</td>
+            if($content->auteur != null) {
+                echo "<td class='w3-container w3-border ctps'>" . $content->pseudo . "</td>
                     <td class='w3-container w3-border' style='width: auto'>
-                        <form method='get' action='" . htmlspecialchars($_SERVER['PHP_SELF']) . "'>
-                            <button class='w3-button w3-theme w3-round-xlarge w3-hover-dark-grey' type='submit' name='idp' value='$content->id'> Lien vers le profil</button>
-                        </form>
+                        <a class='w3-button w3-theme w3-round-xlarge w3-hover-dark-grey' href='?idp=$content->id'> Lien vers le profil</a>
                     </td>
                 </tr>";
+            } else {
+                echo "<td class='w3-container w3-border'>" . $content->pseudo . "</td>
+                    <td class='w3-container w3-border' style='width: auto'>
+                        <a class='w3-button w3-theme w3-round-xlarge w3-hover-dark-grey' href='?idp=$content->id'> Lien vers le profil</a>
+                    </td>
+                </tr>";
+            }
         }
     }
     echo "
@@ -50,5 +54,5 @@ if(isset($_SESSION)) {
     <script type='text/javascript' src='assets/scripts/user_profile.js'></script>
 </div>
     ";
-}
+
 ?>

@@ -89,6 +89,7 @@
             require 'others_files/class_class.php';
             $cat_cont = $db->query("SELECT categories.categorie, pseudo , contenu, publications.id FROM utilisateurs JOIN publications ON utilisateurs.id = publications.auteur JOIN categories ON publications.categorie = categories.id WHERE utilisateurs.id = ".$_GET['idp']." GROUP BY categories.categorie, utilisateurs.pseudo, publications.contenu, publications.id");
             $cat_cont->setFetchMode(PDO::FETCH_CLASS, 'profil_class');
+
             while($content = $cat_cont->fetch()) {
                 echo "
                     <tr class='w3-border'>
