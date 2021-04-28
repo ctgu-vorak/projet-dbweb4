@@ -55,9 +55,12 @@ require 'files/pages/head.html';
             case "publications":
                 include("files/pages/publications.php");
                 break;
-            default:
-                header("Location : index.php");
+            // Entraine une erreur serveur --> à voir
+            // default:
+                // header("Location : https://pedago.univ-avignon.fr/~uapv2001983/projet-dbweb4/index.php");
+                // break;
         }
+
     }
     elseif(isset($_GET['idc'])) {
         include("files/pages/publicationsCategories.php");
