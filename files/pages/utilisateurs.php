@@ -4,7 +4,7 @@ session_start();
 <div>
     
     <div>";
-    require 'files/navbar.php';
+    require 'files/pages/navbar.php';
     echo"
     </div>
     <div class='w3-margin'>
@@ -19,7 +19,7 @@ session_start();
                 </tr>
             </thead>
             <tbody>";
-    require 'others_files/class_class.php';
+    require 'files/others/class_class.php';
     if (isset($db)) {
         $stmt = $db->query("SELECT pseudo, auteur, utilisateurs.id FROM utilisateurs LEFT JOIN publications p on utilisateurs.id = p.auteur GROUP BY utilisateurs.id, auteur ORDER BY utilisateurs.id ASC");
         $stmt->setFetchMode(PDO::FETCH_CLASS, 'users_class');

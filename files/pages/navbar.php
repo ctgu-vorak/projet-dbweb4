@@ -5,7 +5,7 @@
     <a title='Accéder à votre profil' class='w3-bar-item w3-mobile w3-theme w3-hover-blue-grey' href='?idp=".$_SESSION['id']."' style='text-decoration: none'>
         <i class='fa fa-user-circle-o'></i> Mon profil
     </a>";
-    require 'files/addmod_modal.php';
+    require 'files/pages/addmod_modal.php';
     echo "    
     <a title='Retour index' class='w3-bar-item w3-mobile w3-theme w3-hover-blue-grey w3-right' href='".htmlspecialchars($_SERVER['PHP_SELF'])."' style='text-decoration: none'>
         <i class='fa fa-reply-all'></i>
@@ -20,7 +20,7 @@
     } else {
         echo "
 <div class='w3-bar w3-theme'>";
-        include("files/session_connexion.php");
+        include("files/pages/session_connexion.php");
     echo "        
     <a class='w3-bar-item w3-mobile w3-right w3-theme w3-hover-blue-grey w3-right' href='".htmlspecialchars($_SERVER['PHP_SELF'])."' style='text-decoration: none'>
         <i class='fa fa-reply-all'></i>

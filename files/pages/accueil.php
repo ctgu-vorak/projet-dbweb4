@@ -3,7 +3,7 @@
     if(isset($_SESSION['pseudo'])) {
         echo "
         <div>";
-        require 'files/navbar.php';
+        require 'files/pages/navbar.php';
         echo "
         </div>
         <div class='w3-center'>
@@ -21,7 +21,7 @@
     } else {
         echo "
         <div>";
-        require 'files/navbar.php';
+        require 'files/pages/navbar.php';
         echo "
         </div>
             <div class='w3-center'>

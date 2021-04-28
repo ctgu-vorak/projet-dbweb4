@@ -1,9 +1,9 @@
 <?php
     // Traitement du module de connexion
-    require 'others_files/db_connect.php';
+    require 'files/others/db_connect.php';
     if(isset($db)) {
         if(isset($_POST['pseudo_pseudo'], $_POST['id_pseudo'])) {
-            require 'others_files/class_class.php';
+            require 'files/others/class_class.php';
             $conn_pseudo = $_POST['pseudo_pseudo'];
             $conn_id = (int)$_POST['id_pseudo'];
             $query = $db->prepare("SELECT id, pseudo FROM utilisateurs WHERE id = ? AND pseudo = ?");
@@ -40,7 +40,7 @@
 <html lang="fr">
 <head>
 <?php
-require 'files/head.html';
+require 'files/pages/head.html';
 ?>
 </head>
 <body>
@@ -50,23 +50,23 @@ require 'files/head.html';
     if (isset($_GET['page_content'])) {
         switch ($_GET['page_content']) {
             case "user_list":
-                include("files/utilisateurs.php");
+                include("files/pages/utilisateurs.php");
                 break;
             case "publications":
-                include("files/publications.php");
+                include("files/pages/publications.php");
                 break;
             default:
                 header("Location : index.php");
         }
     }
     elseif(isset($_GET['idc'])) {
-        include("files/publicationsCategories.php");
+        include("files/pages/publicationsCategories.php");
     }
     elseif (isset($_GET['idp'])) {
-        include("files/profil.php");
+        include("files/pages/profil.php");
     }
     else {
-        include("files/accueil.php");
+        include("files/pages/accueil.php");
     }
 
     // Traitement des publications
@@ -115,6 +115,3 @@ require 'files/head.html';
 
 </html>
 <!-- © Site imaginé et créé par Clément GUIMONNEAU (alias kaarov) pour le module DBWEB4 - Architecture Web et Bases de données de l'Université d'Avignon-->
-<!--
-
--->

@@ -4,7 +4,7 @@
         echo "
         <div>
             <div>";
-            require 'files/navbar.php';
+            require 'files/pages/navbar.php';
             echo"
             </div>
             <div class='w3-container w3-padding w3-center'>
@@ -23,7 +23,7 @@
                 <tbody>";
 
         if(isset($db)) {
-            require 'others_files/class_class.php';
+            require 'files/others/class_class.php';
             $query = $db->prepare("SELECT categories.categorie, categories.id, contenu FROM utilisateurs JOIN publications ON utilisateurs.id = publications.auteur JOIN categories ON publications.categorie = categories.id GROUP BY categories.categorie, categories.id, publications.contenu ORDER BY categories.categorie");
             $query->execute();
             $query->setFetchMode(PDO::FETCH_CLASS, 'publications_class');
@@ -60,7 +60,7 @@
     echo "
     <div>";
         echo "<div>";
-        require 'files/navbar.php';
+        require 'files/pages/navbar.php';
         echo "</div>
             <div class='w3-padding'>
             <table class='w3-border w3-table-all w3-centered'>
@@ -76,7 +76,7 @@
                 </thead>
                 <tbody>";
         if(isset($db)) {
-            require 'others_files/class_class.php';
+            require 'files/others/class_class.php';
             $query = $db->prepare("SELECT categories.categorie, categories.id, contenu FROM utilisateurs JOIN publications ON utilisateurs.id = publications.auteur JOIN categories ON publications.categorie = categories.id GROUP BY categories.categorie, categories.id, publications.contenu ORDER BY categories.categorie");
             $query->execute();
             $query->setFetchMode(PDO::FETCH_CLASS, 'publications_class');

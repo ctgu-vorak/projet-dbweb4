@@ -4,7 +4,7 @@
     if(isset($_SESSION['pseudo'])) {
         echo "
         <div>";
-            require 'files/navbar.php';
+            require 'files/pages/navbar.php';
             echo"
         </div>
         <div class='w3-padding'>
@@ -21,7 +21,7 @@
                 </tr>
             </thead>";
             if(isset($db)) {
-                require 'others_files/class_class.php';
+                require 'files/others/class_class.php';
                 $cat_cont = $db->query("SELECT categories.categorie, pseudo , contenu, publications.id FROM utilisateurs JOIN publications ON utilisateurs.id = publications.auteur JOIN categories ON publications.categorie = categories.id WHERE utilisateurs.id = ".$_GET['idp']." GROUP BY categories.categorie, utilisateurs.pseudo, publications.contenu, publications.id");
                 $cat_cont->setFetchMode(PDO::FETCH_CLASS, 'profil_class');
                 while($content = $cat_cont->fetch()) {
@@ -70,7 +70,7 @@
     else {
         echo "
         <div>";
-        require 'files/navbar.php';
+        require 'files/pages/navbar.php';
         echo"
         </div>
         <div class='w3-padding'>
@@ -86,7 +86,7 @@
                 </tr>
             </thead>";
         if(isset($db)) {
-            require 'others_files/class_class.php';
+            require 'files/others/class_class.php';
             $cat_cont = $db->query("SELECT categories.categorie, pseudo , contenu, publications.id FROM utilisateurs JOIN publications ON utilisateurs.id = publications.auteur JOIN categories ON publications.categorie = categories.id WHERE utilisateurs.id = ".$_GET['idp']." GROUP BY categories.categorie, utilisateurs.pseudo, publications.contenu, publications.id");
             $cat_cont->setFetchMode(PDO::FETCH_CLASS, 'profil_class');
 
