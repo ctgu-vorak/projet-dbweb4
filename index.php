@@ -48,16 +48,15 @@ require 'files/head.html';
 <?php
     // Traitement page d'accueil
     if (isset($_GET['page_content'])) {
-        $submit = $_GET['page_content'];
-        if($submit == 'user_list' || $submit == 'publications') {
-            switch ($submit) {
-                case "user_list":
-                    include("files/utilisateurs.php");
-                    break;
-                case "publications":
-                    include("files/publications.php");
-                    break;
-            }
+        switch ($_GET['page_content']) {
+            case "user_list":
+                include("files/utilisateurs.php");
+                break;
+            case "publications":
+                include("files/publications.php");
+                break;
+            default:
+                header("Location : index.php");
         }
     }
     elseif(isset($_GET['idc'])) {
