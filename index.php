@@ -55,22 +55,38 @@ require 'files/pages/head.html';
             case "publications":
                 include("files/pages/publications.php");
                 break;
-            // Entraine une erreur serveur --> à voir
-            // default:
-                // header("Location : https://pedago.univ-avignon.fr/~uapv2001983/projet-dbweb4/index.php");
-                // break;
+            default:
+                echo "<meta http-equiv='refresh' content='0;URL=index.php'>";
+                break;
         }
-
     }
     elseif(isset($_GET['idc'])) {
-        include("files/pages/publicationsCategories.php");
+        $min = $db->query('SELECT min(id) FROM categories');
+        $max = $db->query('SELECT max(id) FROM categories');
+        $cmin = $min->fetchAll(PDO::FETCH_COLUMN,0);
+        $cmax = $max->fetchAll(PDO::FETCH_COLUMN,0);
+
+        if($_GET['idc'] >= $cmin[0] && $_GET['idc'] <= $cmax[0])
+            include("files/pages/publicationsCategories.php");
+        else
+            echo "<meta http-equiv='refresh' content='0;URL=index.php?page_content=publications'>";
     }
+
     elseif (isset($_GET['idp'])) {
-        include("files/pages/profil.php");
+        $min = $db->query('SELECT min(id) FROM utilisateurs');
+        $max = $db->query('SELECT max(id) FROM utilisateurs');
+        $pmin = $min->fetchAll(PDO::FETCH_COLUMN,0);
+        $pmax = $max->fetchAll(PDO::FETCH_COLUMN,0);
+
+        if($_GET['idp'] >= $pmin[0] && $_GET['idp'] <= $pmax)
+            include("files/pages/profil.php");
+        else
+            echo "<meta http-equiv='refresh' content='0;URL=index.php?page_content=user_list'>";
     }
     else {
         include("files/pages/accueil.php");
     }
+
 
     // Traitement des publications
     if(isset($db)) {

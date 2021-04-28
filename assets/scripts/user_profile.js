@@ -19,24 +19,14 @@ $(document).ready(function () {
         $(this).animate({'zoom': 1}, 25);
     });
 
-    /* ---------- Passage en bleu si c'est publié ---------- */
+    /* ---------- Passage en bleu si la personne a une publication ---------- */
+
     $(".ctps").hover(function () {
-            $(this).css("background", "#607fff");
-        },
-        function () {
-            $(this).css("background", "#FFFFFF");
-        });
+        $(this).css("background", "#607FFF");
+    },
+    function () {
+        $(this).css("background", "#607FFF");
+    });
 
 
 });
-
-/*
-
-$(".ctps").hover(function () {
-            $(this).css("background", "#1EE49B");
-        },
-        function () {
-            $(this).css("background", "#FFFFFF");
-        });
-
- */

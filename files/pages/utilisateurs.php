@@ -8,10 +8,15 @@ session_start();
     echo"
     </div>
     <div class='w3-margin'>
-        <table class='w3-border w3-table-all w3-centered'>
+        <table class='w3-border w3-table-all w3-centered' id='usertable'>
             <thead>
                 <tr class='w3-border'>
                     <th colspan='2'>Utilisateurs</th>
+                </tr>
+                <tr class='w3-border'>
+                    <th colspan='2'>
+                        <input class='w3-input w3-border w3-padding' type='text' placeholder='Qui cherchez vous ?' id='search_Input' onkeyup='userSearch()' />
+                    </th>
                 </tr>
                 <tr class='w3-border'>
                     <th class='w3-border'>Nom</th>
@@ -51,8 +56,8 @@ session_start();
             </tbody>
         </table>
     </div>
-    <script type='text/javascript' src='assets/scripts/user_profile.js'></script>
 </div>
     ";
-
 ?>
+<script type='text/javascript' src='assets/scripts/user_profile.js'></script>
+<script type='text/javascript' src='assets/scripts/search.js'></script>
