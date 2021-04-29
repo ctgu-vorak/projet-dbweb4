@@ -129,7 +129,7 @@ require 'files/pages/head.html';
             $url = "https://pedago.univ-avignon.fr/~uapv2001983/projet-dbweb4/index.php?page_content=user_list";
             $sql = "SELECT utilisateur, publication FROM votes WHERE utilisateur = {$_SESSION['id']} AND publication = {$_POST['notes_pub']} ORDER BY publication ASC";
             $var = $db->query($sql);
-            $var->setFetchMode(PDO::FETCH_CLASS, 'votes_class');
+            $var->setFetchMode(PDO::FETCH_CLASS, 'troisieme');
 
             if($var->fetch()) {
                 echo "<script>alert(\"Vous avez déjà voté pour cette publication.\")</script>";
@@ -145,7 +145,7 @@ require 'files/pages/head.html';
     }
 
 ?>
-    <br /><br />
+    <!--<br /><br />
     <div id="footer" class="w3-center w3-row w3-theme-l2 w3-round-large w3-margin">
         <p>
             <b>Alphidi</b> est un réseau social à but non lucratif.<br />
@@ -154,7 +154,7 @@ require 'files/pages/head.html';
             Toutes les images utilisées sur ce site sont libres de droit ou créées par le WebDesigner du site |
             &copy; Tout droits réservés - 2021
         </p>
-    </div>
+    </div>-->
 </body>
 </html>
 <!-- © Site imaginé et créé par Clément GUIMONNEAU (alias kaarov) pour le module DBWEB4 - Architecture Web et Bases de données de l'Université d'Avignon-->

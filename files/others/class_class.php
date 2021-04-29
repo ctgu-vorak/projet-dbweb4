@@ -1,85 +1,36 @@
 <?php
 
-class users_class
-{
-    public $id, $pseudo, $auteur;
+class premiere {
+    public $id, $auteur, $pseudo;
 
     public function __construct()
     {
         $this->id;
-        $this->pseudo;
         $this->auteur;
+        $this->pseudo;
     }
 
-    public function __toString()
-    {
-        $a = 'str';
-        // TODO: Implement __toString() method.
-        return $a;
-    }
 }
 
-class publications_class
-{
-    public $contenu, $id, $categorie, $auteur;
+class deuxieme extends premiere {
+    public $categorie, $contenu;
 
     public function __construct()
     {
         $this->categorie;
-        $this->id;
         $this->contenu;
-        $this->auteur;
     }
-
-    public function __toString()
-    {
-        $a = 'str';
-        // TODO: Implement __toString() method.
-        return $a;
-    }
-}
-
-class profil_class
-{
-    public $categorie, $pseudo, $contenu, $id;
-
-    public function __construct()
-    {
-        $this->categorie;
-        $this->pseudo;
-        $this->contenu;
-        $this->id;
-    }
-
-    public function __toString()
-    {
-        $a = 'str';
-        // TODO: Implement __toString() method.
-        return $a;
-    }
-
 
 }
 
-class votes_class
-{
-    public $pseudo, $publication, $utilisateur;
+class troisieme extends deuxieme {
+    public $publication, $utilisateur;
 
     public function __construct()
     {
-        $this->pseudo;
         $this->publication;
         $this->utilisateur;
     }
-
-
-    public function __toString()
-    {
-        $a = 'str';
-        // TODO: Implement __toString() method.
-        return $a;
-    }
-
 
 }
 
