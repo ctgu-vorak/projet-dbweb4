@@ -1,7 +1,4 @@
 <div>
-    <!--
-    TODO : proposer un système de votes : idem que dans publicationsCategories.php
-    -->
     <div>
         <?php require 'files/pages/navbar.php'; ?>
     </div>

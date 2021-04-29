@@ -3,7 +3,7 @@
         echo "
 <div class='w3-bar w3-theme'>
    <a title='Accéder à votre profil' class='w3-bar-item w3-mobile w3-theme w3-hover-blue-grey' href='?idp=".$_SESSION['id']."' style='text-decoration: none'>
-        <i class='fa fa-user-circle-o'></i> Mon profil
+        <i class='fa fa-user-circle-o'></i> Mon profil - {$_SESSION['pseudo']}
     </a>";
     require 'files/pages/addmod_modal.php';
     echo "    

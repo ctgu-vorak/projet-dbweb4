@@ -36,11 +36,11 @@
                 echo "
                     <tr class='w3-border'>
                          <td class='w3-container w3-border'>".$content->categorie."</td>
-                         <td class='w3-container w3-border' style='width: auto'>".$content->contenu."</td>
+                         <form method='post' action='" . htmlspecialchars($_SERVER['PHP_SELF']) . "'>
+                         <td class='w3-container w3-border' style='width: auto'>".$content->contenu."<input type='hidden' name='notes_pub' value='{$content->id}' /></td>
                          <td class='w3-container w3-border' style='width: auto'>
-                            <form method='post' action='" . htmlspecialchars($_SERVER['PHP_SELF']) . "'>
-                                <button class='w3-button w3-theme w3-round-xlarge w3-hover-dark-grey' type='reset' name='vote' value=''><i class='fa fa-thumbs-o-up'></i></button>
-                            </form>
+                            <button class='w3-button w3-theme w3-round-xlarge w3-hover-dark-grey' type='submit'><i class='fa fa-thumbs-o-up'></i></button>
+                        </form>
                          </td>
                          <td class='w3-container w3-border' style='width: auto'>
                             <form method='get' action='" . htmlspecialchars($_SERVER['PHP_SELF']) . "'>

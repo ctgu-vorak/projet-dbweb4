@@ -44,6 +44,7 @@ require 'files/pages/head.html';
 ?>
 </head>
 <body>
+<div>
 
 <?php
     // Traitement page d'accueil
@@ -124,12 +125,36 @@ require 'files/pages/head.html';
         }
 
         // Traitement des votes
+        if(isset($_POST['notes_pub'])) {
+            $url = "https://pedago.univ-avignon.fr/~uapv2001983/projet-dbweb4/index.php?page_content=user_list";
+            $sql = "SELECT utilisateur, publication FROM votes WHERE utilisateur = {$_SESSION['id']} AND publication = {$_POST['notes_pub']} ORDER BY publication ASC";
+            $var = $db->query($sql);
+            $var->setFetchMode(PDO::FETCH_CLASS, 'votes_class');
+
+            if($var->fetch()) {
+                echo "<script>alert(\"Vous avez déjà voté pour cette publication.\")</script>";
+                echo "<meta http-equiv='refresh' content='0;URL={$url}'>";
+            } else {
+                $insert_id = (int) $_SESSION['id'];
+                $insert_pub = (int) $_POST['notes_pub'];
+                $prepare = $db->prepare("INSERT INTO votes (utilisateur, publication) VALUES (?,?)")->execute(array($insert_id, $insert_pub));
+                echo "<meta http-equiv='refresh' content='0;URL={$url}'>";
+            }
+        }
         
     }
 
 ?>
-
+    <br /><br />
+    <div id="footer" class="w3-center w3-row w3-theme-l2 w3-round-large w3-margin">
+        <p>
+            <b>Alphidi</b> est un réseau social à but non lucratif.<br />
+            Si ce site ne vous donne pas entière satisfaction, merci de le signaler <a href='mailto:contact@alphidi.fr' target='_top'>ici</a>.<br />
+            Société : <b>Alphidi</b> | <b>C.A :</b> 45 024 187,76€ (2020)<br>
+            Toutes les images utilisées sur ce site sont libres de droit ou créées par le WebDesigner du site |
+            &copy; Tout droits réservés - 2021
+        </p>
+    </div>
 </body>
-
 </html>
 <!-- © Site imaginé et créé par Clément GUIMONNEAU (alias kaarov) pour le module DBWEB4 - Architecture Web et Bases de données de l'Université d'Avignon-->

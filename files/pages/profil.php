@@ -28,7 +28,9 @@
                     echo "
                     <tr class='w3-border'>
                         <td class='w3-container w3-border'>" . $content->categorie . "</td>
-                        <td class='w3-container w3-border content'>" . $content->contenu . "</td>
+                        <form method='post' action='" . htmlspecialchars($_SERVER['PHP_SELF']) . "'>
+                        
+                        <td class='w3-container w3-border content'>" . $content->contenu . "<input type='hidden' name='notes_pub' value='{$content->id}' /></td>
                         <td class='w3-container w3-border notes'>";
                         $user_like = $db->query("SELECT pseudo, publication FROM votes JOIN utilisateurs u ON votes.utilisateur = u.id JOIN publications p ON p.id = votes.publication WHERE p.id = votes.publication GROUP BY publication, votes.utilisateur, pseudo ORDER BY publication");
                         $user_like->setFetchMode(PDO::FETCH_CLASS, 'votes_class');
@@ -39,10 +41,9 @@
                         }
                         echo "</td>
                             <td class='w3-container w3-border'>
-                                <form method='post' action='" . htmlspecialchars($_SERVER['PHP_SELF']) . "'>
-                                    <button class='w3-button w3-theme w3-round-xlarge w3-hover-dark-grey' type='reset' name='vote' value=''><i class='fa fa-thumbs-o-up'></i></button>
-                                </form>
+                                <button class='w3-button w3-theme w3-round-xlarge w3-hover-dark-grey' type='submit'><i class='fa fa-thumbs-o-up'></i></button>
                             </td>
+                            </form>
                         </tr>";
                 }
                 echo "  
@@ -129,5 +130,9 @@
     }
     echo "<script type='text/javascript' src='assets/scripts/user_profile.js'></script>";
 ?>
+
+<!--
+
+-->
 
 
