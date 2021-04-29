@@ -61,24 +61,20 @@ require 'files/pages/head.html';
         }
     }
     elseif(isset($_GET['idc'])) {
-        $min = $db->query('SELECT min(id) FROM categories');
-        $max = $db->query('SELECT max(id) FROM categories');
-        $cmin = $min->fetchAll(PDO::FETCH_COLUMN,0);
-        $cmax = $max->fetchAll(PDO::FETCH_COLUMN,0);
+        $catLimitQuery = $db->query('SELECT min(id), max(id) FROM categories');
+        $catLimit = $catLimitQuery->fetch(PDO::FETCH_ASSOC);
 
-        if($_GET['idc'] >= $cmin[0] && $_GET['idc'] <= $cmax[0])
+        if($_GET['idc'] >= $catLimit['min'] && $_GET['idc'] <= $catLimit['max'])
             include("files/pages/publicationsCategories.php");
         else
             echo "<meta http-equiv='refresh' content='0;URL=index.php?page_content=publications'>";
     }
 
     elseif (isset($_GET['idp'])) {
-        $min = $db->query('SELECT min(id) FROM utilisateurs');
-        $max = $db->query('SELECT max(id) FROM utilisateurs');
-        $pmin = $min->fetchAll(PDO::FETCH_COLUMN,0);
-        $pmax = $max->fetchAll(PDO::FETCH_COLUMN,0);
+        $userLimitQuery = $db->query('SELECT min(id), max(id) FROM utilisateurs');
+        $userLimit = $userLimitQuery->fetch(PDO::FETCH_ASSOC);
 
-        if($_GET['idp'] >= $pmin[0] && $_GET['idp'] <= $pmax)
+        if($_GET['idp'] >= $userLimit['min'] && $_GET['idp'] <= $userLimit['max'])
             include("files/pages/profil.php");
         else
             echo "<meta http-equiv='refresh' content='0;URL=index.php?page_content=user_list'>";
@@ -111,10 +107,10 @@ require 'files/pages/head.html';
 
         // Traitement de la modification
         if(isset($_POST['mod_pseudo'], $_POST['mod_content'], $_POST['mod_id_pub'] ,$_POST['mod_categorie'])) {
-            $m_pseudo = $_POST['mod_pseudo']; // varchar
-            $m_content = $_POST['mod_content']; // text
-            $m_id_pub = $_POST['mod_id_pub']; // int
-            $m_categorie = $_POST['mod_categorie']; // int
+            $m_pseudo = $_POST['mod_pseudo'];
+            $m_content = $_POST['mod_content'];
+            $m_id_pub = $_POST['mod_id_pub'];
+            $m_categorie = $_POST['mod_categorie'];
 
             // Trouver la catégorie de la publication
             $find_categorie = $db->prepare("SELECT id FROM categories WHERE categorie = ?");
@@ -126,6 +122,9 @@ require 'files/pages/head.html';
             $url = "https://pedago.univ-avignon.fr/~uapv2001983/projet-dbweb4/index.php?idp=".$_SESSION['id'];
             echo "<script>alert('Publication mise à jour.');</script><meta http-equiv='refresh' content='0;URL={$url}'>";
         }
+
+        // Traitement des votes
+        
     }
 
 ?>
