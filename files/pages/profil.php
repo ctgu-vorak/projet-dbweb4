@@ -23,7 +23,7 @@
             if(isset($db)) {
                 require 'files/others/class_class.php';
                 $cat_cont = $db->query("SELECT categories.categorie, pseudo , contenu, publications.id FROM utilisateurs JOIN publications ON utilisateurs.id = publications.auteur JOIN categories ON publications.categorie = categories.id WHERE utilisateurs.id = ".$_GET['idp']." GROUP BY categories.categorie, utilisateurs.pseudo, publications.contenu, publications.id");
-                $cat_cont->setFetchMode(PDO::FETCH_CLASS, 'profil_class');
+                $cat_cont->setFetchMode(PDO::FETCH_CLASS, 'troisieme');
                 while($content = $cat_cont->fetch()) {
                     echo "
                     <tr class='w3-border'>
@@ -33,7 +33,7 @@
                         <td class='w3-container w3-border content'>" . $content->contenu . "<input type='hidden' name='notes_pub' value='{$content->id}' /></td>
                         <td class='w3-container w3-border notes'>";
                         $user_like = $db->query("SELECT pseudo, publication FROM votes JOIN utilisateurs u ON votes.utilisateur = u.id JOIN publications p ON p.id = votes.publication WHERE p.id = votes.publication GROUP BY publication, votes.utilisateur, pseudo ORDER BY publication");
-                        $user_like->setFetchMode(PDO::FETCH_CLASS, 'votes_class');
+                        $user_like->setFetchMode(PDO::FETCH_CLASS, 'troisieme');
                         while($content_like = $user_like->fetch()) {
                             if ($content->id == $content_like->publication) {
                                 echo $content_like->pseudo . "<br />";
@@ -89,7 +89,7 @@
         if(isset($db)) {
             require 'files/others/class_class.php';
             $cat_cont = $db->query("SELECT categories.categorie, pseudo , contenu, publications.id FROM utilisateurs JOIN publications ON utilisateurs.id = publications.auteur JOIN categories ON publications.categorie = categories.id WHERE utilisateurs.id = ".$_GET['idp']." GROUP BY categories.categorie, utilisateurs.pseudo, publications.contenu, publications.id");
-            $cat_cont->setFetchMode(PDO::FETCH_CLASS, 'profil_class');
+            $cat_cont->setFetchMode(PDO::FETCH_CLASS, 'troisieme');
 
             while($content = $cat_cont->fetch()) {
                 echo "
@@ -98,7 +98,7 @@
                         <td class='w3-container w3-border content'>" . $content->contenu . "</td>
                         <td class='w3-container w3-border notes'>";
                 $user_like = $db->query("SELECT pseudo, publication FROM votes JOIN utilisateurs u ON votes.utilisateur = u.id JOIN publications p ON p.id = votes.publication WHERE p.id = votes.publication GROUP BY publication, votes.utilisateur, pseudo ORDER BY publication");
-                $user_like->setFetchMode(PDO::FETCH_CLASS, 'votes_class');
+                $user_like->setFetchMode(PDO::FETCH_CLASS, 'troisieme');
                 while($content_like = $user_like->fetch()) {
                     if ($content->id == $content_like->publication) {
                         echo $content_like->pseudo . "<br />";

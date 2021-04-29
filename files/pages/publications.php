@@ -31,7 +31,7 @@
             require 'files/others/class_class.php';
             $query = $db->prepare("SELECT categories.categorie, categories.id, contenu FROM utilisateurs JOIN publications ON utilisateurs.id = publications.auteur JOIN categories ON publications.categorie = categories.id GROUP BY categories.categorie, categories.id, publications.contenu ORDER BY categories.categorie");
             $query->execute();
-            $query->setFetchMode(PDO::FETCH_CLASS, 'publications_class');
+            $query->setFetchMode(PDO::FETCH_CLASS, 'deuxieme');
             while ($content = $query->fetch()) {
                 echo "
                     <tr class='w3-border'>
@@ -89,7 +89,7 @@
             require 'files/others/class_class.php';
             $query = $db->prepare("SELECT categories.categorie, categories.id, contenu FROM utilisateurs JOIN publications ON utilisateurs.id = publications.auteur JOIN categories ON publications.categorie = categories.id GROUP BY categories.categorie, categories.id, publications.contenu ORDER BY categories.categorie");
             $query->execute();
-            $query->setFetchMode(PDO::FETCH_CLASS, 'publications_class');
+            $query->setFetchMode(PDO::FETCH_CLASS, 'deuxieme');
             while ($content = $query->fetch()) {
                 echo "
                     <tr class='w3-border'>

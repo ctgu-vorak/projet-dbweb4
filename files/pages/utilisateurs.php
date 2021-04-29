@@ -27,7 +27,7 @@ session_start();
     require 'files/others/class_class.php';
     if (isset($db)) {
         $stmt = $db->query("SELECT pseudo, auteur, utilisateurs.id FROM utilisateurs LEFT JOIN publications p on utilisateurs.id = p.auteur GROUP BY utilisateurs.id, auteur ORDER BY utilisateurs.id ASC");
-        $stmt->setFetchMode(PDO::FETCH_CLASS, 'users_class');
+        $stmt->setFetchMode(PDO::FETCH_CLASS, 'premiere');
 
         while($content = $stmt->fetch()) {
             if($content->auteur != null) {
