@@ -44,7 +44,7 @@ require 'files/pages/head.html';
 ?>
 </head>
 <body>
-<div>
+
 
 <?php
     // Traitement page d'accueil
@@ -85,7 +85,7 @@ require 'files/pages/head.html';
     }
 
 
-    // Traitement des publications
+    // Traitement des formulaires
     if(isset($db)) {
         // Traitement de l'ajout
         if(isset($_POST['pseudo'], $_POST['content'], $_POST['categorie'])) {
@@ -141,20 +141,19 @@ require 'files/pages/head.html';
                 echo "<meta http-equiv='refresh' content='0;URL={$url}'>";
             }
         }
-        
     }
-
 ?>
-    <!--<br /><br />
-    <div id="footer" class="w3-center w3-row w3-theme-l2 w3-round-large w3-margin">
-        <p>
-            <b>Alphidi</b> est un réseau social à but non lucratif.<br />
-            Si ce site ne vous donne pas entière satisfaction, merci de le signaler <a href='mailto:contact@alphidi.fr' target='_top'>ici</a>.<br />
-            Société : <b>Alphidi</b> | <b>C.A :</b> 45 024 187,76€ (2020)<br>
-            Toutes les images utilisées sur ce site sont libres de droit ou créées par le WebDesigner du site |
-            &copy; Tout droits réservés - 2021
-        </p>
-    </div>-->
+
+
 </body>
+
 </html>
-<!-- © Site imaginé et créé par Clément GUIMONNEAU (alias kaarov) pour le module DBWEB4 - Architecture Web et Bases de données de l'Université d'Avignon-->
+
+<!-- © Site imaginé et créé par Clément GUIMONNEAU (alias voraak) pour le module DBWEB4 - Architecture Web et Bases de données de l'Université d'Avignon-->
+<!--
+body{position: relative;}
+#footer {position: absolute; bottom: 0;}
+<div style="position: absolute; bottom: 0;" class="w3-border w3-center w3-red">
+class="w3-center w3-row w3-theme-l2 w3-round-large w3-margin w3-border"
+</div>
+-->

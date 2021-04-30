@@ -1,8 +1,6 @@
 <?php
 session_start();
-    echo "
-<div>
-    
+    echo "   
     <div>";
     require 'files/pages/navbar.php';
     echo"
@@ -56,7 +54,6 @@ session_start();
             </tbody>
         </table>
     </div>
-</div>
     ";
 ?>
 <script type='text/javascript' src='assets/scripts/user_profile.js'></script>

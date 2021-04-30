@@ -128,11 +128,11 @@
             </table>
         </div>";
     }
-    echo "<script type='text/javascript' src='assets/scripts/user_profile.js'></script>";
 ?>
+<script type='text/javascript' src='assets/scripts/user_profile.js'></script>
 
-<!--
 
--->
+
+
 
 
