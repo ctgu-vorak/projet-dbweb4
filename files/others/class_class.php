@@ -10,6 +10,11 @@ class premiere {
         $this->pseudo;
     }
 
+    public function __toString()
+    {
+        return "<a>.print_r($this, True)."</a>";
+    }
+
 }
 
 class deuxieme extends premiere {
@@ -19,6 +24,11 @@ class deuxieme extends premiere {
     {
         $this->categorie;
         $this->contenu;
+    }
+
+    public function __toString()
+    {
+        return "<a>.print_r($this, True)."</a>";
     }
 
 }
@@ -32,6 +42,10 @@ class troisieme extends deuxieme {
         $this->utilisateur;
     }
 
+    public function __toString()
+    {
+        return "<a>.print_r($this, True)."</a>";
+    }
 }
 
 ?>

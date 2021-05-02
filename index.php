@@ -150,10 +150,3 @@ require 'files/pages/head.html';
 </html>
 
 <!-- © Site imaginé et créé par Clément GUIMONNEAU (alias voraak) pour le module DBWEB4 - Architecture Web et Bases de données de l'Université d'Avignon-->
-<!--
-body{position: relative;}
-#footer {position: absolute; bottom: 0;}
-<div style="position: absolute; bottom: 0;" class="w3-border w3-center w3-red">
-class="w3-center w3-row w3-theme-l2 w3-round-large w3-margin w3-border"
-</div>
--->
