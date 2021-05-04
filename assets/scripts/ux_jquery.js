@@ -22,11 +22,11 @@ $(document).ready(function () {
     /* ---------- Passage en bleu si la personne a une publication ---------- */
 
     $(".ctps").hover(function () {
-        $(this).css("background-color", "#607FFF");
-    },
-    function () {
-        $(this).css("background-color", "#607FFF");
-    });
+            $(this).css("background-color", "#607FFF");
+        },
+        function () {
+            $(this).css("background-color", "#607FFF");
+        });
 
 
 });

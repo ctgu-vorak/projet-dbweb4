@@ -129,10 +129,4 @@
         </div>";
     }
 ?>
-<script type='text/javascript' src='assets/scripts/user_profile.js'></script>
-
-
-
-
-
-
+<script type='text/javascript' src='assets/scripts/ux_jquery.js'></script>

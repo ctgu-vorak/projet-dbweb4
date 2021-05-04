@@ -38,7 +38,7 @@
         ";
     }
 ?>
-<div class='w3-center w3-display-bottommiddle w3-theme w3-container w3-padding' style="width: 100%">
+<div class='w3-center w3-display-bottommiddle w3-theme w3-container w3-padding' style='width: 100%'>
     <b>Alphidi</b> est un site qui a été réalisé dans le cadre d'un projet universitaire. <br />
     De ce fait, il bénéficie d'une protection contre le plagiat. <br />
     <i>(<a href='https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000006278911' target='_blank'><b>Article L122-4</b></a> du Code de la propriété intellectuelle)</i> <br />
