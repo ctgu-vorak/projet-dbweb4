@@ -12,7 +12,7 @@ class premiere {
 
     public function __toString()
     {
-        return "<a>.print_r($this, True)."</a>";
+        return "<a>".print_r($this, True)."</a>";
     }
 
 }
@@ -28,9 +28,8 @@ class deuxieme extends premiere {
 
     public function __toString()
     {
-        return "<a>.print_r($this, True)."</a>";
+        return "<a>".print_r($this, True)."</a>";
     }
-
 }
 
 class troisieme extends deuxieme {
@@ -44,7 +43,7 @@ class troisieme extends deuxieme {
 
     public function __toString()
     {
-        return "<a>.print_r($this, True)."</a>";
+        return "<a>".print_r($this, True)."</a>";
     }
 }
 
