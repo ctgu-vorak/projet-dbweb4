@@ -120,13 +120,13 @@ require 'files/pages/head.html';
 
             $update_pub = $db->prepare("UPDATE publications SET contenu = ?, categorie = ? WHERE id = ?")->execute(array($m_content, $f_categorie[0], (int)$m_id_pub));
 
-            $url = "https://pedago.univ-avignon.fr/~uapv2001983/projet-dbweb4/index.php?idp=".$_SESSION['id'];
+            $url = "index.php?idp={$_SESSION['id']}";
             echo "<script>alert('Publication mise à jour.');</script><meta http-equiv='refresh' content='0;URL={$url}'>";
         }
 
         // Traitement des votes
         if(isset($_POST['notes_pub'])) {
-            $url = "https://pedago.univ-avignon.fr/~uapv2001983/projet-dbweb4/index.php?page_content=user_list";
+            $url = "index.php?page_content=user_list";
             $sql = "SELECT utilisateur, publication FROM votes WHERE utilisateur = {$_SESSION['id']} AND publication = {$_POST['notes_pub']} ORDER BY publication ASC";
             $var = $db->query($sql);
             $var->setFetchMode(PDO::FETCH_CLASS, 'troisieme');
