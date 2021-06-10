@@ -28,7 +28,7 @@ Un serveur web fourni par l'Université ainsi qu'un SGBD (**S**ystème de **G**e
 
 ## Preamble
 This project is the component of a review conducted for the **DBWEB4 - Web Architecture and Databases** module of the University of Avignon.  
-It is the result of a month of work carried out on PHPStorm 2021.1 between 06/04/2021 and 06/05/2021.
+It is the result of a month of work carried out on [PHPStorm 2021.1] between 06/04/2021 and 06/05/2021.
 
 ## Project Objective
 This project aims to create what looks like a small social network. *(Quiet Facebook)* :smirk:  
