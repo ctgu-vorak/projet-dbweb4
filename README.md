@@ -1,7 +1,7 @@
 # Projet DBWEB4 - Réseau Social - FR
 
 ## Préambule
-Ce projet est la composante d'un examen réalisé pour le module **DBWEB4 - Architecture Web et Bases de données** de l'Université d'Avignon.  
+Ce projet est la composante d'un examen réalisé pour le module **DBWEB4 - Architecture Web et Bases de données** de la Licence 2 en Informatique de l'[Université d'Avignon].  
 Il est le résultat d'un mois de travail réalisé sur [PHPStorm 2021.1] entre le 06/04/2021 et le 06/05/2021.  
 
 ## Objectif du projet
@@ -27,7 +27,7 @@ Un serveur web fourni par l'Université ainsi qu'un SGBD (**S**ystème de **G**e
 # DBWEB4 Project - Social Network - EN
 
 ## Preamble
-This project is the component of a review conducted for the **DBWEB4 - Web Architecture and Databases** module of the University of Avignon.  
+This project is the component of a review conducted for the **DBWEB4 - Web Architecture and Databases** of the Licence 2 in Computer Science of the [University of Avignon]. 
 It is the result of a month of work carried out on [PHPStorm 2021.1] between 06/04/2021 and 06/05/2021.
 
 ## Project Objective
@@ -48,5 +48,7 @@ Therefore, the objective was to give it a more important dimension by adding var
 ## What tools are used ?
 A web server provided by the University as well as a DBMS (**D**ata**B**ase **M**anagement **S**ystem) [PostGreSQL].
 
+[Université d'Avignon]:<https://ceri.univ-avignon.fr/formations/licence-informatique/licence-informatique-7003.kjsp>
 [PHPStorm 2021.1]:<https://www.jetbrains.com/fr-fr/phpstorm/>
 [PostGreSQL]:<https://www.postgresql.org/>
+[University of Avignon]:<https://ceri.univ-avignon.fr/formations/licence-informatique/licence-informatique-7003.kjsp>
